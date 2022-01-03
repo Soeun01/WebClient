@@ -46,7 +46,7 @@ h6 {
 
 img.logo {
 	display: inline-block;
-	width: 150px;
+	width: 250px;
 }
 
 .m-height-100 {
@@ -62,7 +62,7 @@ img.logo {
 }
 
 .header-area {
-	background-image: url(./assets/img/header-bg.jpg);
+	background-image: url(./assets/img/Library.png);
 	background-size: cover;
 	background-position: center;
 	height: 1080px;
@@ -555,7 +555,7 @@ a.scroll-down:hover {
 }
 
 .features-slider .owl-nav div:hover {
-	background: #6e45e2;
+	background: #fff;
 }
 
 /*Testimonial*/

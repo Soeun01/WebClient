@@ -71,7 +71,7 @@ img.logo {
 }
 
 .header-top {
-	padding: 48px 0 0;
+	padding: 15% 0 0;
 }
 
 .mainmenu {
@@ -1718,13 +1718,18 @@ i.user-comments.cmnts-color-two {
 /*Get Started*/
 
 .get-start.header-area {
-	background-image: url(./assets/img/getstrated/hero-bg-1.jpg);
+	background-image: url(./assets/img/Character.png);
 }
 
 
 .contact-area {
+	width: 500px;
 	background: #f9fafc;
-	padding: 100px 0;
+	padding: 70px 0;
+	position: absolute;
+	left: 50%;
+	top: 18%;
+	transform: translateX(-50%);
 }
 
 .start-title h6 {

@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
 		var pos = $(window).scrollTop();
 		if (pos > a) {
 			$(".header-top .navbar").css({
-				background: '#7362de',
+				background: '#29376E',
 				transition: 'all 0.3s ease-in-out',
 				height: 60,
 			});

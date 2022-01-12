@@ -1,23 +1,5 @@
 jQuery(document).ready(function($) {
 
-// rest api 써볼것
-// const url = 'http://localhost:5000/';
-// const data = { title: "The Matrix", year: "1994" };
-
-// fetch(
-//     url,
-//     {
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify(data),
-//         method: "POST"
-//     }
-// )
-// .then(data => data.json())
-// .then((json) => {
-//     alert(JSON.stringify(json));
-// });
-
-
     //navbar click add class active
     $(".navbar-nav").on("click", "li", function() {
         $(".navbar-nav li").removeClass("active");

@@ -1,8 +1,5 @@
 jQuery(document).ready(function($) {
 
-
-
-
     //navbar click add class active
     $(".navbar-nav").on("click", "li", function() {
         $(".navbar-nav li").removeClass("active");

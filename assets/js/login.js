@@ -1,48 +1,28 @@
-// var btn_login = document.querySelector('.btn-primary');
+//로그인 기능
 
-// btn_login.addEventListener('click', function() {
-//     var url = 'http://localhost:58156/Service1.svc/Stu_Login';
-//     // 보낼 데이터
-//     var data = {
-//         id: document.getElementById('email').value,
-//         password: document.getElementById('fullname').value
-//     };
+$(function () {
+    //버튼 클릭시 실행
+    $("#loginBtn").on("click", function () {
+        //서버 주소
+        const url = "http://localhost:58156/Service1.svc/GetLogin/";
+        //입력 받은 id, pw
+        var id = $("#stuId").val();
+        var pw = $("#stuPw").val();
 
-//     fetch(url, {
-//             method: 'POST',
-//             mode: 'cors',
-//             credentials: 'same-origin',   //omit(X), same-origin(cors), include(no-cors)
-//             body: data,
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//         }).then(res => res.json())
-//         .then(response => console.log('Success:', JSON.stringify(response)))
-//         .catch(error => console.error('Error:', error));
-// });
-
-var apiUrl = "http://andrewgodfroyportfolioapi.azurewebsites.net/api/Authentication";
-    //alert(username + "|" + password + "|" + apiUrl);
-    $.ajax({
-        url: apiUrl,
-        type: "POST",
-        data: {
-            username: username,
-            password: password
-        },
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (response) {
-            var authenticatedUser = JSON.parse(response);
-            //alert("Data Loaded: " + authenticatedUser);
-            if (onComplete != null) {
-                onComplete(authenticatedUser);
-            }
-        },
-        error: function (xhr, status, error) {
-            //alert(xhr.responseText);
-            if (onComplete != null) {
-                onComplete(xhr.responseText);
-            }
+        if (id == "" || pw == "") {
+            return;
+        } else {
+            fetch(url + id + "/" + pw)
+                .then(response => response.json())
+                // .then(data => alert(data));
+                .then(data => {
+                    alert(data);
+                    if (data == "성공") {
+                        location.href = "index.html";
+                    } else {
+                        location.href = "login.html";
+                    }
+                });
         }
     });
+});

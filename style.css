@@ -12,13 +12,12 @@ textarea:focus,
 button:focus {
 	outline: 0 solid;
 }
-/*
+
 a:link a:active,
-a:visited,
-	{
+a:visited {
 	text-decoration: none !important;
 }
-*/
+
 a,
 a:hover {
 	text-decoration: none;
@@ -44,10 +43,10 @@ h6 {
 	border-color: #ddd
 }
 
-
 img.logo {
 	display: inline-block;
-	width: 250px;
+	width: 200px;
+	margin: 10px 40px;
 }
 
 .m-height-100 {
@@ -1114,6 +1113,7 @@ a.scroll-down:hover {
 
 .footer-bottom {
 	padding: 50px 0;
+	background-color: #f2f2f3;
 	border-bottom: 1px solid #f2f2f3
 }
 
@@ -1844,7 +1844,7 @@ select.form-control:not([size]):not([multiple]) {
 	height: 40px;
 }
 
-button[type=submit] {
+#loginBtn {
 	background: #6e45e2;
 	text-transform: uppercase;
 	font-size: 12px;
@@ -1856,7 +1856,7 @@ button[type=submit] {
 	margin-top: 20px
 }
 
-button[type=submit]:hover {
+#loginBtn:hover {
 	background: #fff;
 	color: #9fa4af;
 	cursor: pointer;

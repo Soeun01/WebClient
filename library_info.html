@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="./assets/css/responsive.css">
 
 	<script src="./assets/js/jquery.3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
@@ -37,14 +38,18 @@
 					<div class="collapse navbar-collapse my-2 my-lg-0" id="navbarSupportedContent">
 						<div class="mainmenu">
 							<ul class="navbar-nav ml-auto">
+								<li class="access-name">
+									
+								</li>
+
 								<li class="nav-item active">
 									<a class="nav-link" href="index.html">홈<span class="sr-only">(current)</span></a>
 								</li>
-
+								
 								<li class="nav-item">
 									<a class="nav-link" href="install.html">다운로드</a>
 								</li>
-
+								
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">도서관</a>
@@ -56,15 +61,14 @@
 								</li>
 
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">기타</a>
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">기타</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="notice.html">공지사항</a>
 										<a class="dropdown-item" href="help.html">이용안내</a>
 									</div>
 								</li>
 
-								<li class="getstart"><a class="active" href="">게임 접속</a></li>
+								<li class="getstart"><a class="active gamestart" href="">게임 접속</a></li>
 								<li class="getstart"><a class="active login-logout-select" href="login.html">로그인</a></li>
 							</ul>
 						</div>
@@ -83,9 +87,20 @@
 								<p>여러분이 원하는 책을 검색해 보세요.</p>
 							</div>
 						</div>
-						<div class="serch">
-							<input class="serch-text" type="text" placeholder="검색할 도서 이름 입력">
-							<button class="serch-btn"><a href="#section1" class="scrl-down">도서 검색</a></button>
+						<div class="serch-select">
+							<form class="selectbox">
+								<select class="serch-value" name="select">
+									<option value="Title">서명</option>
+									<option value="Authors">저자명</option>
+									<option value="Publisher">출판사</option>
+									<option value="ID">도서ID</option>
+									<option value="Isbn">국제표준도서번호</option>
+								</select>
+							</form>
+							<div class="serch">
+								<input class="serch-text" type="text" placeholder="검색할 도서 이름 입력">
+								<button class="serch-btn"><a href="#section1" class="scrl-down">도서 검색</a></button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -103,24 +118,39 @@
 ======================================-->
 	<div id="section1" class="single-post-area">
 		<div class="container">
-			<div class="value-data">
-				<div class="row justify-content-center">
-					<div class="row sopnge-welcome-search-booklist">
-						<div class="div-booklist">
-							<ul class="booklist">
-								<li>
-									<div>
-										<a href="/Search/Detail/712329" title="모두의 인공지능  : 인공지능에서 인공생명까지!">
-											<img src="https://bookthumb-phinf.pstatic.net/cover/211/229/21122940.jpg?type=m1&amp;udate=20211207"
-												alt="모두의 인공지능  : 인공지능에서 인공생명까지!"
-												onerror="javascript: this.src = '/Sponge/Images/bookDefaults/MMbookdefaultsmall.png'">
-											모두의 인공지능 : 인공지능에서 인공생명까지!
-										</a>
-									</div>
-								</li>
-							</ul>
-						</div>
-					</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-10 booklist-border">
+					<h2 class="">베스트셀러</h2>
+					<ul class="booklist">
+						<li>
+							<a href="index.html" class="bookCover">
+								<img src="https://bookthumb-phinf.pstatic.net/cover/211/229/21122940.jpg?type=m1&amp;udate=20211207"
+									alt="모두의 인공지능  : 인공지능에서 인공생명까지!">
+							</a>
+							<div class="bookContent">
+								<div class="bookTitle">
+									<a href="/Search/Detail/712329">
+										모두의 인공지능 : 인공지능에서 인공생명까지!
+									</a>
+								</div>
+								<span class="bookAuthor">강태원</span>
+							</div>
+						</li>
+						<li>
+							<a href="/Search/Detail/712320" class="bookCover">
+								<img src="https://bookthumb-phinf.pstatic.net/cover/136/172/13617234.jpg?type=m1&amp;udate=20210630"
+									alt="(너무 늦기 전에 들어야 할)임종학 강의  : 아름다운 삶을 위한 죽음 공부">
+							</a>
+							<div class="bookContent">
+								<div class="bookTitle">
+									<a href="/Search/Detail/712320">
+										(너무 늦기 전에 들어야 할)임종학 강의 : 아름다운 삶을 위한 죽음 공부
+									</a>
+								</div>
+								<span class="bookAuthor">최준식</span>
+							</div>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>

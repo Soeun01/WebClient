@@ -65,7 +65,7 @@ img.logo {
 	background-image: url(./assets/img/Library.png);
 	background-size: cover;
 	background-position: center;
-	height: 900px;
+	height: 650px;
 	position: relative;
 	z-index: 3;
 }
@@ -99,6 +99,14 @@ img.logo {
 	display: block;
 	color: #fff;
 	font-weight: 500;
+	padding: 15px;
+}
+
+.access-name {
+	display: block;
+	color: #fff;
+	font-size: small;
+	font-weight: 300;
 	padding: 15px;
 }
 
@@ -160,10 +168,10 @@ li.getstart a.active {
 .hero-text-inner {
 	display: table-cell;
 	/* vertical-align: middle; */
-	position: absolute;	
-	top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .hero-text h6 {
@@ -1216,70 +1224,6 @@ a.scroll-down:hover {
 }
 
 
-
-/*why Misocial Style*/
-
-
-.whymisocial.header-area {
-	background-image: url(assets/img/whymisocial/hero-bg.jpg)
-}
-
-.whymisocial .hero-text h6 {
-	padding-left: 0;
-}
-
-.whymisocial .hero-text h1 span {
-	background: #6e45e2;
-	border: 2px solid #6434ef;
-}
-
-.whymisocial {
-	position: relative;
-	z-index: 3;
-}
-
-.whymisocial:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	content: "";
-	z-index: -1;
-	opacity: 0.75;
-	background: #7156e0;
-	background: -moz-linear-gradient(left, #7156e0 0%, #86c9cf 100%);
-	background: -webkit-linear-gradient(left, #7156e0 0%, #86c9cf 100%);
-	background: linear-gradient(to right, #7156e0 0%, #86c9cf 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7156e0', endColorstr='#86c9cf', GradientType=1);
-}
-
-.whymisocial .hero-text h6:before {
-	left: 50%;
-	margin-left: -175px;
-}
-
-.whymisocial .hero-text h6:after {
-	right: 50%;
-	margin-right: -175px;
-	position: absolute;
-	top: 50%;
-	content: "";
-	width: 24px;
-	height: 1px;
-	background: #fff;
-}
-
-.whymisocial .hero-text-wrapper {
-	height: 770px;
-}
-
-.whymisocial.header-area {
-	height: 770px;
-}
-
-
-
 /*Features Style*/
 
 
@@ -1759,7 +1703,7 @@ i.user-comments.cmnts-color-two {
 
 
 
-/*Get Started*/
+/*로그인*/
 
 
 .get-start.header-area {
@@ -1887,7 +1831,7 @@ select.form-control:not([size]):not([multiple]) {
 
 
 
-/*Library*/
+/*도서관*/
 
 
 .single-blog.header-area {
@@ -2114,6 +2058,9 @@ select.form-control:not([size]):not([multiple]) {
 	border: 0;
 }
 
+
+/* 도서 검색 */
+
 .serch-text:-ms-input-placeholder {
 	color: #29376E;
 }
@@ -2126,13 +2073,34 @@ select.form-control:not([size]):not([multiple]) {
 	color: #29376E;
 }
 
+.selectbox {
+	position: absolute;
+	top: 27%;
+	left: 25%;
+	transform: translate(-50%, -50%);
+	height: 40px;
+	width: 10%;
+	border: 1px solid #29376E;
+	background: #fff;
+}
+
+.serch-value {
+	color: #707173;
+	font-size: 14px;
+	width: 100%;
+	padding: 8px 10px;
+	border: 0;
+	outline: none;
+	float: left;
+}
+
 .serch {
 	position: absolute;
-	top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+	top: 27%;
+	left: 56%;
+	transform: translate(-50%, -50%);
 	height: 40px;
-	width: 70%;
+	width: 50%;
 	border: 1px solid #29376E;
 	background: #fff;
 }
@@ -2141,17 +2109,58 @@ select.form-control:not([size]):not([multiple]) {
 	font-size: 16px;
 	width: 70%;
 	padding: 10px;
-	border: 0px;
+	border: 0;
 	outline: none;
 	float: left;
 }
 
 .serch-btn {
-	width: 23%;
+	width: 25%;
 	height: 100%;
+	padding: 0 5px;
 	border: 0px;
 	background: #29376E;
 	outline: none;
 	float: right;
 	color: #fff;
 }
+
+
+/* 도서 목록 */
+
+.booklist {
+	list-style: none;
+}
+
+.booklist li {
+	padding: 10px;
+	border: solid #ddd;
+	border-width: 1px;
+	margin-bottom: 10px;
+	height: 120px;
+}
+
+li a img {
+	padding-right: 10px;
+	border: solid #bbb;
+	border-width: 0 1px 0 0;
+}
+
+.bookCover {
+	text-align: center;
+	float: left;
+}
+
+.bookContent {
+	text-align: left;
+	margin: 35px 0 35px 120px;
+}
+
+.bookTitle {
+	font-weight: bold;
+}
+
+.bookAuthor {
+	font-size: small;
+}
+

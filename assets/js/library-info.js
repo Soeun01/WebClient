@@ -1,9 +1,10 @@
 
 // 검색 함수
 jQuery(function ($) {
-    $(".booklist").append("<li class=\"list1\">안녕</li>");
+    // const url = "http://localhost:58156/Service1.svc/";
+    const url = "http://localhost:59755/WSUforestService.svc/";
 
-    $("list1").append()
+    // $(".booklist").append("<li class=\"list1\">안녕</li>");
 
     // keyup : 키보드를 눌렀다 땔때 실행되는 함수
     $(".serch-text").keyup(function (event) {
@@ -19,4 +20,7 @@ jQuery(function ($) {
             }
         });
     });
+
+    
+
 });

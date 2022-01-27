@@ -1,14 +1,65 @@
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
+    // const url = "http://localhost:58156/Service1.svc/";
+    const url = "http://localhost:59755/WSUforestService.svc/";
+
+    // 로그인 버튼 : login-logout-select
+    // 로그인한 사람 아이디 : access-name
+    //처음 로딩시 현재 어떤 상태(로그인/로그아웃)인지에 따라 문자 변환
+    $(function () {
+        var cookieCheck = $.cookie("userId");
+        // 쿠키가 없을 경우
+        if (cookieCheck == "") {
+            $(".login-logout-select").text("로그인");
+            $(".access-name").text("");
+            // alert(cookieCheck);
+        } else { //쿠키가 있을 경우
+            // 로그인 유무 확인
+            fetch(url + "WSU_LoginCheck/" + cookieCheck)
+                .then(response => response.json())
+                .then(data => {
+                    var res = data.split(",");
+                    //로그인 중
+                    if (res[0] == "001") {
+                        $(".login-logout-select").text("로그아웃");
+                        $(".access-name").text(cookieCheck + "님");
+                        // alert(data);
+                    } else { //로그아웃 중
+                        $(".login-logout-select").text("로그인");
+                        $(".access-name").text("");
+                        // alert(data);
+                    }
+                });
+        }
+    });
+
+
+    //로그인/로그아웃 버튼 클릭시 
+    $(".login-logout-select").on("click", function () {
+        var text = $(".login-logout-select").text();
+        if (text == "로그인") {
+            location.href("login.html");
+        } else {
+            var id = $(".access-name").text();
+            var data = id.split("님");
+
+            fetch(url + "WSU_Logout/" + data[0])
+                .then(response => response.json())
+                .then(data => {
+                    var msg = data.split(",");
+                    alert("[" + msg[0] + "] " + msg[1]);
+                    location.replace = "index.html";
+                });
+        }
+    });
 
     //navbar click add class active
-    $(".navbar-nav").on("click", "li", function() {
+    $(".navbar-nav").on("click", "li", function () {
         $(".navbar-nav li").removeClass("active");
         $(this).addClass("active");
     });
 
-
     //On scroll header add background
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         var a = 10;
         var pos = $(window).scrollTop();
         if (pos > a) {
@@ -25,8 +76,7 @@ jQuery(document).ready(function($) {
             $(".header-top .navbar").removeClass("animated slideInDown");
         }
     });
-
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         var a = 10;
         var pos = $(window).scrollTop();
         if (pos > a) {
@@ -55,7 +105,6 @@ jQuery(document).ready(function($) {
         animateOut: 'fadeOut',
     });
 
-
     //Feautes Slider
     $(".testimonial-slider").owlCarousel({
         items: 1,
@@ -66,7 +115,6 @@ jQuery(document).ready(function($) {
         animateIn: 'fadeIn',
         animateOut: 'fadeOut',
     });
-
 
     //Single Blog Slider
     $(".singleblog-slider").owlCarousel({
@@ -83,8 +131,6 @@ jQuery(document).ready(function($) {
         dots: false,
         mouseDrag: false,
     });
-
-
 
     //Articles Slider
     $(".articles-slider").owlCarousel({
@@ -107,6 +153,7 @@ jQuery(document).ready(function($) {
             }
         }
     });
+
     //Single-blog Slider
     $(".single-blog-slider").owlCarousel({
         items: 2,
@@ -150,17 +197,16 @@ jQuery(document).ready(function($) {
         }
     });
 
-
     //popup Modal Video
     $(".js-modal-btn").modalVideo();
+
     //Prevent default behavior of Anchor tag
-    $("a.js-modal-btn").click(function(event) {
+    $("a.js-modal-btn").click(function (event) {
         return false;
     });
 
-
     //Click to scroll to next section
-    $('.scrl-down').on('click', function(e) {
+    $('.scrl-down').on('click', function (e) {
         e.preventDefault();
         $('html, body').animate({
             scrollTop: $($(this).attr('href')).offset().top
@@ -168,36 +214,34 @@ jQuery(document).ready(function($) {
     });
 
     //On click change footer menu active
-    $(".footer-menu li").on("click", function() {
+    $(".footer-menu li").on("click", function () {
         $(".footer-menu li").removeClass("active");
         $(this).addClass("active");
     });
 
     //Back to top
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 900) {
             $('.back-to-top').fadeIn();
         } else {
             $('.back-to-top').fadeOut();
         }
     });
-    $(".back-to-top").click(function() {
+    $(".back-to-top").click(function () {
         $("html, body").animate({
             scrollTop: 0
         }, 1000);
     });
 
     //Loadmore
-    $(function() {
+    $(function () {
         $(".blogs-load").slice(0, 9).show();
-        $(".all-blogs").on('click', function(e) {
+        $(".all-blogs").on('click', function (e) {
             e.preventDefault();
             $(".blogs-load:hidden").slice(0, 3).slideDown();
         });
     });
 
 
-
-    
 
 });

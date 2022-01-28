@@ -22,11 +22,11 @@ jQuery(document).ready(function ($) {
                     if (res[0] == "001") {
                         $(".login-logout-select").text("로그아웃");
                         $(".access-name").text(cookieCheck + "님");
-                        // alert(data);
+                        //연결된 링크를 없애버림
+                        $("a.login-logout-select").attr("href", "#");
                     } else { //로그아웃 중
                         $(".login-logout-select").text("로그인");
                         $(".access-name").text("");
-                        // alert(data);
                     }
                 });
         }
@@ -35,10 +35,13 @@ jQuery(document).ready(function ($) {
 
     //로그인/로그아웃 버튼 클릭시 
     $(".login-logout-select").on("click", function () {
+        //버튼 이름을 가져오기
         var text = $(".login-logout-select").text();
+
+        //로그인 버튼
         if (text == "로그인") {
             location.href("login.html");
-        } else {
+        } else { //로그아웃 버튼
             var id = $(".access-name").text();
             var data = id.split("님");
 
@@ -47,10 +50,11 @@ jQuery(document).ready(function ($) {
                 .then(data => {
                     var msg = data.split(",");
                     alert("[" + msg[0] + "] " + msg[1]);
-                    location.replace = "index.html";
+                    location.reload();
                 });
         }
     });
+
 
     //navbar click add class active
     $(".navbar-nav").on("click", "li", function () {

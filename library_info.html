@@ -16,7 +16,9 @@
 	<link rel="stylesheet" href="./assets/css/responsive.css">
 
 	<script src="./assets/js/jquery.3.2.1.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
+		integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
@@ -24,7 +26,7 @@
 
 	<!-- Start Header area
 ======================================-->
-	<div class="single-blog header-area">
+	<div class="library-info header-area">
 		<div class="container">
 			<div class="header-top">
 				<nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -34,22 +36,21 @@
 						aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
-
 					<div class="collapse navbar-collapse my-2 my-lg-0" id="navbarSupportedContent">
 						<div class="mainmenu">
 							<ul class="navbar-nav ml-auto">
 								<li class="access-name">
-									
+
 								</li>
 
 								<li class="nav-item active">
 									<a class="nav-link" href="index.html">홈<span class="sr-only">(current)</span></a>
 								</li>
-								
+
 								<li class="nav-item">
 									<a class="nav-link" href="install.html">다운로드</a>
 								</li>
-								
+
 								<li class="nav-item dropdown">
 									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
 										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">도서관</a>
@@ -61,7 +62,8 @@
 								</li>
 
 								<li class="nav-item dropdown">
-									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">기타</a>
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">기타</a>
 									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 										<a class="dropdown-item" href="notice.html">공지사항</a>
 										<a class="dropdown-item" href="help.html">이용안내</a>
@@ -69,7 +71,8 @@
 								</li>
 
 								<li class="getstart"><a class="active gamestart" href="">게임 접속</a></li>
-								<li class="getstart"><a class="active login-logout-select" href="login.html">로그인</a></li>
+								<li class="getstart"><a class="active login-logout-select" href="login.html">로그인</a>
+								</li>
 							</ul>
 						</div>
 					</div>
@@ -123,13 +126,13 @@
 					<h2 class="">베스트셀러</h2>
 					<ul class="booklist">
 						<li>
-							<a href="index.html" class="bookCover">
-								<img src="https://bookthumb-phinf.pstatic.net/cover/211/229/21122940.jpg?type=m1&amp;udate=20211207"
-									alt="모두의 인공지능  : 인공지능에서 인공생명까지!">
+							<a class="bookCover" href="book_info.html">
+								<img
+									src="https://bookthumb-phinf.pstatic.net/cover/211/229/21122940.jpg?type=m1&amp;udate=20211207">
 							</a>
 							<div class="bookContent">
 								<div class="bookTitle">
-									<a href="/Search/Detail/712329">
+									<a href="book_info.html">
 										모두의 인공지능 : 인공지능에서 인공생명까지!
 									</a>
 								</div>
@@ -137,13 +140,13 @@
 							</div>
 						</li>
 						<li>
-							<a href="/Search/Detail/712320" class="bookCover">
-								<img src="https://bookthumb-phinf.pstatic.net/cover/136/172/13617234.jpg?type=m1&amp;udate=20210630"
-									alt="(너무 늦기 전에 들어야 할)임종학 강의  : 아름다운 삶을 위한 죽음 공부">
+							<a class="bookCover" href="book_info.html">
+								<img
+									src="https://bookthumb-phinf.pstatic.net/cover/136/172/13617234.jpg?type=m1&amp;udate=20210630">
 							</a>
 							<div class="bookContent">
 								<div class="bookTitle">
-									<a href="/Search/Detail/712320">
+									<a href="book_info.html">
 										(너무 늦기 전에 들어야 할)임종학 강의 : 아름다운 삶을 위한 죽음 공부
 									</a>
 								</div>
@@ -170,6 +173,9 @@
 		<div class="footer-bottom">
 			<div class="container-fluid">
 				<div class="row">
+					<div class="col-lg-4">
+						<a href="" class="logo-footer"><img src="./assets/img/footer-logo.png" alt=""></a>
+					</div>
 					<div class="col-lg-8">
 						<div class="footer-menu">
 							<ul>
@@ -177,26 +183,18 @@
 								<li><a href="whymisocial.html">Why MISOCIAL</a></li>
 								<li><a href="feature.html">Features</a></li>
 								<li><a href="articles.html">Articles</a></li>
-								<li><a href="pricing.html">Pricing</a></li>
-								<span><a href="getstarted.html">get started</a></span>
 							</ul>
+						</div>
+					</div>
+					<div class="col-lg-8 text-center">
+						<div class="copyright">
+							<p>© 2017 Mass Impressions &amp; Tranmautritam. Make the right impression.</p>
 						</div>
 					</div>
 				</div>
 				<!--End of row-->
 			</div>
 			<!--End of container fluid-->
-		</div>
-		<!--End of footer bottom-->
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-8 text-left">
-					<div class="copyright">
-						<p>© 2022 Mass Impressions &amp; Tranmautritam. Make the right impression.</p>
-					</div>
-				</div>
-			</div>
-			<!--End of row-->
 		</div>
 		<!--End of container fluid-->
 		<a href="#" class="back-to-top"><i class="fa fa-long-arrow-up"></i></a>

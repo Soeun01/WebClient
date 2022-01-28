@@ -65,7 +65,7 @@ img.logo {
 	background-image: url(./assets/img/Library.png);
 	background-size: cover;
 	background-position: center;
-	height: 650px;
+	height: 770px;
 	position: relative;
 	z-index: 3;
 }
@@ -161,7 +161,7 @@ li.getstart a.active {
 
 .hero-text-wrapper {
 	display: table;
-	height: 977px;
+	height: 600px;
 	width: 100%;
 }
 
@@ -169,7 +169,7 @@ li.getstart a.active {
 	display: table-cell;
 	/* vertical-align: middle; */
 	position: absolute;
-	top: 15%;
+	top: 30%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
@@ -1834,16 +1834,16 @@ select.form-control:not([size]):not([multiple]) {
 /*도서관*/
 
 
-.single-blog.header-area {
-	background-image: url(./assets/img/single-blog/single-blog-hero-bg.jpg)
+.library-info.header-area {
+	background-image: url(./assets/img/library/single-blog-hero-bg.jpg)
 }
 
-.single-blog {
+.library-info {
 	position: relative;
 	z-index: 2;
 }
 
-.single-blog:after {
+.library-info:after {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1855,16 +1855,16 @@ select.form-control:not([size]):not([multiple]) {
 	opacity: 0.30;
 }
 
-.single-blog .hero-text h6 {
+.library-info .hero-text h6 {
 	padding-left: 0;
 }
 
-.single-blog .hero-text h6:before {
+.library-info .hero-text h6:before {
 	background: transparent;
 	text-transform: uppercase;
 }
 
-.single-blog .hero-text h1 {
+.library-info .hero-text h1 {
 	margin-bottom: 0;
 }
 
@@ -1873,7 +1873,7 @@ select.form-control:not([size]):not([multiple]) {
 	margin: 0 auto;
 }
 
-.single-blog .owl-nav div {
+.library-info .owl-nav div {
 	position: absolute;
 	left: -90px;
 	top: 50%;
@@ -1884,16 +1884,16 @@ select.form-control:not([size]):not([multiple]) {
 	transition: 0.3s
 }
 
-.single-blog .owl-nav div:hover {
+.library-info .owl-nav div:hover {
 	color: #fff;
 }
 
-.single-blog .owl-nav div.owl-next {
+.library-info .owl-nav div.owl-next {
 	left: auto;
 	right: -90px;
 }
 
-.single-blog .owl-nav div i.fa {
+.library-info .owl-nav div i.fa {
 	position: relative;
 	top: 0;
 	margin: 0 14px;
@@ -2004,7 +2004,7 @@ select.form-control:not([size]):not([multiple]) {
 
 .single-blog-control.control-area {
 	height: 770px;
-	background-image: url(./assets/img/single-blog/single-blog-map.jpg)
+	background-image: url(./assets/img/library/single-blog-map.jpg)
 }
 
 .single-blog-wrapper {
@@ -2073,9 +2073,14 @@ select.form-control:not([size]):not([multiple]) {
 	color: #29376E;
 }
 
+.serch-select {
+	display: table;
+}
+
+/* 검색 종류 */
 .selectbox {
 	position: absolute;
-	top: 27%;
+	top: 50%;
 	left: 25%;
 	transform: translate(-50%, -50%);
 	height: 40px;
@@ -2094,9 +2099,10 @@ select.form-control:not([size]):not([multiple]) {
 	float: left;
 }
 
+/* 검색창 */
 .serch {
 	position: absolute;
-	top: 27%;
+	top: 50%;
 	left: 56%;
 	transform: translate(-50%, -50%);
 	height: 40px;
@@ -2162,5 +2168,69 @@ li a img {
 
 .bookAuthor {
 	font-size: small;
+}
+
+
+/* 도서 상세페이지 */
+
+
+.book-info.header-area {
+	background-image: url(./assets/img/library/white-background.png)
+}
+
+.book-info {
+	position: relative;
+	z-index: 2;
+}
+
+/* 배경에 약간 검은 막 생기는거 이거 때문임 */
+.book-info:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 14%;
+	background: #29376e;
+	content: "";
+	z-index: -1;
+}
+
+.book-info .hero-text h6 {
+	padding-left: 0;
+}
+
+.book-info .hero-text h6:before {
+	background: transparent;
+	text-transform: uppercase;
+}
+
+.book-info .hero-text h1 {
+	margin-bottom: 0;
+}
+
+.book-info .owl-nav div {
+	position: absolute;
+	left: -90px;
+	top: 50%;
+	color: #8c84d8;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 700;
+	transition: 0.3s
+}
+
+.book-info .owl-nav div:hover {
+	color: #fff;
+}
+
+.book-info .owl-nav div.owl-next {
+	left: auto;
+	right: -90px;
+}
+
+.book-info .owl-nav div i.fa {
+	position: relative;
+	top: 0;
+	margin: 0 14px;
 }
 

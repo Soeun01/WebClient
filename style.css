@@ -2134,11 +2134,11 @@ select.form-control:not([size]):not([multiple]) {
 
 /* 도서 목록 */
 
-.booklist {
+#booklist {
 	list-style: none;
 }
 
-.booklist li {
+#booklist li {
 	padding: 10px;
 	border: solid #ddd;
 	border-width: 1px;

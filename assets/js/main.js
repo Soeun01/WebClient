@@ -55,6 +55,33 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    //login.html - 로그인 버튼 클릭시 로그인
+        $("#loginBtn").on("click", function () {
+        //입력 받은 id, pw
+        var id = $("#userId").val();
+        var pw = $("#userPw").val();
+
+        if (id == "" || pw == "") {
+            alert("아이디와 비밀번호를 입력하세요.");
+        } else {
+            fetch(url + "WSU_Login/" + id + "/" + pw)
+                .then(response => response.json())
+                // .then(data => alert(data));
+                .then(data => {
+                    var msg = data.split(",");
+                    //로그인 성공
+                    if (msg[0] == "100") {
+                        alert("[" + msg[0] + "] " + msg[1] + "\n" + msg[2]);
+                        $.cookie("userId", id, {expires: 1, path: "/"});
+                        //얘를 제외한 모든게 됨
+                        $(location).attr('href','index.html');
+                    } else {    //로그인 실패
+                        alert("[" + msg[0] + "] " + msg[1] + "\n" + msg[2]);
+                    }
+                });
+        }
+    });
+
 
     //navbar click add class active
     $(".navbar-nav").on("click", "li", function () {

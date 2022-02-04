@@ -2059,7 +2059,10 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 
-/* 도서 검색 */
+/* =========== */
+/* 도서 검색 페이지 */
+/* =========== */
+
 
 .serch-text:-ms-input-placeholder {
 	color: #29376E;
@@ -2176,9 +2179,11 @@ li a img {
 	display: none;
 }
 
+
 /* =========== */
 /* 도서 상세 페이지 */
 /* =========== */
+
 
 .book-info.header-area {
 	background-image: url(./assets/img/library/white-background.png);
@@ -2327,7 +2332,7 @@ li a img {
 	border-top: 1px solid #eee;
 }
 
-.bookStatusBtn button {
+.rentarBtn {
 	width: 100px;
     height: 35px;
     padding: 0 5px;
@@ -2337,3 +2342,15 @@ li a img {
     outline: none;
     color: #fff;
 }
+
+
+/* =========== */
+/* 도서 상세 페이지 */
+/* =========== */
+
+
+.rentallist {
+	border-top: 2px solid #eee;
+	padding-top: 20px;
+}
+

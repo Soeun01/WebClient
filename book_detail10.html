@@ -26,7 +26,7 @@
 
 	<!-- Start Header area
 ======================================-->
-	<div class="library-info header-area">
+	<div class="book-info header-area">
 		<div class="container">
 			<div class="header-top">
 				<nav class="navbar navbar-expand-lg navbar-light fixed-top">
@@ -36,6 +36,7 @@
 						aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</button>
+
 					<div class="collapse navbar-collapse my-2 my-lg-0" id="navbarSupportedContent">
 						<div class="mainmenu">
 							<ul class="navbar-nav ml-auto">
@@ -81,62 +82,126 @@
 			</div>
 			<!--End of header top-->
 			<div class="row justify-content-center">
-				<div class="col-lg-12 text-center">
-					<div class="hero-text-wrapper">
-						<div class="hero-text-inner">
-							<div class="hero-text">
-								<h6>SEARCH FOR BOOKS</h6>
-								<h1>도서통합검색</h1>
-								<p>여러분이 원하는 책을 검색해 보세요.</p>
-							</div>
-						</div>
-						<div class="serch-select">
-							<form class="selectbox">
-								<select class="serch-value" name="select">
-									<option value="title">서명</option>
-									<option value="authors">저자명</option>
-									<option value="publisher">출판사</option>
-									<option value="b_id">도서ID</option>
-									<option value="isbn">국제표준도서번호</option>
-								</select>
-							</form>
-							<div class="serch">
-								<input class="serch-text" type="text" placeholder="검색할 도서 이름 입력">
-								<button class="serch-btn"><a href="#section1" class="scrl-down">도서 검색</a></button>
+				<div class="col-lg-12 text-left">
+					<div class="bookinfo">
+						<h2 class="pageTitle">상세정보</h2>
+						<div class="page-bookId">10</div>
+						<div class="bookInfoBorder">
+							<div class="detail-book">
+								<!-- 표지 -->
+								<div class="col-lg-2 detail-table-left">
+									<div class="detail-bookCover">
+										<!-- 표지 이미지 -->
+									</div>
+									<div class="bookHeart">
+										<img src="./assets/img/library/heart.png">
+										<span>도서 찜하기</span>
+									</div>
+								</div>
+								<!-- 정보들 -->
+								<div class="col-lg-9 detail-table-right" id="detailBookInfo">
+									<div class="detail-bookContent">
+										<div class="detail-bookTitle">
+											
+										</div>
+
+										<dl>
+											<dt class="book-list-title">
+												자료유형 &nbsp;
+
+											</dt>
+											<dd class="book-list-data type">
+												
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												ISBN &nbsp;
+
+											</dt>
+											<dd class="book-list-data isbn">
+												
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												출판날짜 &nbsp;
+
+											</dt>
+											<dd class="book-list-data publishingDate">
+												
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												저자명 &nbsp;
+
+											</dt>
+											<dd class="book-list-data authors">
+												
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												서명/저자 &nbsp;
+
+											</dt>
+											<dd class="book-list-data title-authors">
+												
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												출판사 &nbsp;
+
+											</dt>
+											<dd class="book-list-data publisher">
+												
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												번역자 &nbsp;
+
+											</dt>
+											<dd class="book-list-data translators">
+												
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												도서소개 &nbsp;
+
+											</dt>
+											<dd class="book-list-data contents">
+												
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												도서상태 &nbsp;
+
+											</dt>
+											<dd class="book-list-data status">
+												
+											</dd>
+										</dl>
+
+										<div class="bookStatusBtn">
+											<button class="rentarBtn">대출</button>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<!--End of row-->
 		</div>
-		<!--End of Container-->
-		<!-- <a href="#section1" class="scrl-down scroll-down"><i class="fa fa-long-arrow-down"></i></a> -->
+		<!--End of row-->
+	</div>
 	</div>
 	<!--End of header area-->
-
-
-
-	<!-- Content area
-======================================-->
-	<div id="section1" class="single-post-area">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-10 booklist-border">
-					<h2 class="pageTitle">베스트셀러</h2>
-					<ul id="booklist">
-						<!-- li 동적 생성 -->
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--End of Content area-->
-
-		<div class="sponge-layout-wrap sponge-layout-wrap-full" id="mainWrap">
-			<div class="sponge-layout-content-sub">
-			</div>
-		</div>
-	</div>
 
 
 
@@ -159,7 +224,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-lg-8 text-center">
+					<div class="col-lg-12 text-center">
 						<div class="copyright">
 							<p>© 2017 Mass Impressions &amp; Tranmautritam. Make the right impression.</p>
 						</div>
@@ -174,14 +239,14 @@
 	</div>
 	<!--End of Footer Menu-->
 
-
 	<script src="./assets/js/popper.min.js"></script>
 	<script src="./assets/js/bootstrap.min.js"></script>
 	<script src="./assets/js/owl.carousel.min.js"></script>
 	<script src="./assets/js/jquery.nice-select.js"></script>
 	<script src="./assets/js/modal-video.js"></script>
 	<script src="./assets/js/main.js"></script>
-	<script src="./assets/js/library-info.js"></script>
+	<script src="./assets/js/book-detail.js"></script>
+	
 </body>
 
 </html>

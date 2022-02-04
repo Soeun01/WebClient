@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
 
     // 로그인 버튼 : login-logout-select
     // 로그인한 사람 아이디 : access-name
+
     //처음 로딩시 현재 어떤 상태(로그인/로그아웃)인지에 따라 문자 변환
     $(function () {
         var cookieCheck = $.cookie("userId");
@@ -11,37 +12,39 @@ jQuery(document).ready(function ($) {
         if (cookieCheck == "") {
             $(".login-logout-select").text("로그인");
             $(".access-name").text("");
-            // alert(cookieCheck);
-        } else { //쿠키가 있을 경우
+        } else {    // 쿠키가 있을 경우
             // 로그인 유무 확인
             fetch(url + "WSU_LoginCheck/" + cookieCheck)
                 .then(response => response.json())
                 .then(data => {
+                    // alert(data);
                     var res = data.split(",");
-                    //로그인 중
+                    // 로그인 중
                     if (res[0] == "001") {
                         $(".login-logout-select").text("로그아웃");
                         $(".access-name").text(cookieCheck + "님");
-                        //연결된 링크를 없애버림
+                        // 연결된 링크를 없애버림
                         $("a.login-logout-select").attr("href", "#");
-                    } else { //로그아웃 중
+                    } else if (res[0] == "002") { // 로그아웃 중
                         $(".login-logout-select").text("로그인");
                         $(".access-name").text("");
+                    } else {    //003,로그인 체크 실패
+                        alert("[" + res[0] + "] " + res[1]);
                     }
                 });
         }
     });
 
 
-    //로그인/로그아웃 버튼 클릭시 
+    // 로그인/로그아웃 버튼 클릭시 
     $(".login-logout-select").on("click", function () {
-        //버튼 이름을 가져오기
+        // 버튼 이름을 가져오기
         var text = $(".login-logout-select").text();
 
-        //로그인 버튼
+        // 로그인 버튼
         if (text == "로그인") {
             location.href("login.html");
-        } else { //로그아웃 버튼
+        } else { // 로그아웃 버튼
             var id = $(".access-name").text();
             var data = id.split("님");
 
@@ -49,35 +52,8 @@ jQuery(document).ready(function ($) {
                 .then(response => response.json())
                 .then(data => {
                     var msg = data.split(",");
-                    alert("[" + msg[0] + "] " + msg[1]);
+                    // alert("[" + msg[0] + "] " + msg[1]);
                     location.reload();
-                });
-        }
-    });
-
-    //login.html - 로그인 버튼 클릭시 로그인
-        $("#loginBtn").on("click", function () {
-        //입력 받은 id, pw
-        var id = $("#userId").val();
-        var pw = $("#userPw").val();
-
-        if (id == "" || pw == "") {
-            alert("아이디와 비밀번호를 입력하세요.");
-        } else {
-            fetch(url + "WSU_Login/" + id + "/" + pw)
-                .then(response => response.json())
-                // .then(data => alert(data));
-                .then(data => {
-                    var msg = data.split(",");
-                    //로그인 성공
-                    if (msg[0] == "100") {
-                        alert("[" + msg[0] + "] " + msg[1] + "\n" + msg[2]);
-                        $.cookie("userId", id, {expires: 1, path: "/"});
-                        //얘를 제외한 모든게 됨
-                        $(location).attr('href','index.html');
-                    } else {    //로그인 실패
-                        alert("[" + msg[0] + "] " + msg[1] + "\n" + msg[2]);
-                    }
                 });
         }
     });

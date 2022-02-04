@@ -1,0 +1,137 @@
+<li>
+							<a class="bookCover" href="book_info.html">
+								<img
+									src="https://bookthumb-phinf.pstatic.net/cover/211/229/21122940.jpg?type=m1&amp;udate=20211207">
+							</a>
+							<div class="bookContent">
+								<div class="bookTitle">
+									<a href="book_info.html">
+										모두의 인공지능 : 인공지능에서 인공생명까지!
+									</a>
+								</div>
+								<span class="bookAuthor">강태원</span>
+							</div>
+						</li>
+						<li>
+							<a class="bookCover" href="book_info.html">
+								<img
+									src="https://bookthumb-phinf.pstatic.net/cover/136/172/13617234.jpg?type=m1&amp;udate=20210630">
+							</a>
+							<div class="bookContent">
+								<div class="bookTitle">
+									<a href="book_info.html">
+										(너무 늦기 전에 들어야 할)임종학 강의 : 아름다운 삶을 위한 죽음 공부
+									</a>
+								</div>
+								<span class="bookAuthor">최준식</span>
+							</div>
+						</li>
+
+<span class='icon-eBook'></span>&nbsp;전자자료
+
+<!-- 표지 -->
+								<div class="col-lg-2 detail-table-left">
+									<div class="detail-bookCover">
+										<img
+											src="https://cdn.pixabay.com/photo/2021/02/09/12/28/moon-5998379_960_720.jpg">
+									</div>
+									<div class="bookHeart">
+										<img src="./assets/img/library/heart.png">
+										<span>도서 찜하기</span>
+									</div>
+								</div>
+								<!-- 정보들 -->
+								<div class="col-lg-9 detail-table-right" id="detailBookInfo">
+									<div class="detail-bookContent">
+										<div class="detail-bookTitle">
+											조엘온소프트웨어
+										</div>
+
+										<dl>
+											<dt class="book-list-title">
+												자료유형 &nbsp;
+
+											</dt>
+											<dd class="book-list-data">
+												전자자료
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												ISBN &nbsp;
+
+											</dt>
+											<dd class="book-list-data">
+												9788989975588
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												출판날짜 &nbsp;
+
+											</dt>
+											<dd class="book-list-data">
+												2005-04-07
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												저자명 &nbsp;
+
+											</dt>
+											<dd class="book-list-data">
+												조엘스폴스키
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												서명/저자 &nbsp;
+
+											</dt>
+											<dd class="book-list-data">
+												조엘온소프트웨어 / 조엘스폴스키 지음
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												출판사 &nbsp;
+
+											</dt>
+											<dd class="book-list-data">
+												에이콘출판
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												번역자 &nbsp;
+
+											</dt>
+											<dd class="book-list-data">
+												박재호
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												도서소개 &nbsp;
+
+											</dt>
+											<dd class="book-list-data">
+												엘온소프트웨어 블러그에 실렸던 기사 중에서 유쾌하고 핵심을 찌르는 베스트 기사만 뽑아내 엮은 책
+											</dd>
+										</dl>
+										<dl>
+											<dt class="book-list-title">
+												도서상태 &nbsp;
+
+											</dt>
+											<dd class="book-list-data">
+												대출 가능/대출 중/파손/예약/연체
+											</dd>
+										</dl>
+
+										<div class="bookStatusBtn">
+											<button>대출</button>
+										</div>
+									</div>
+								</div>
+

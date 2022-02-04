@@ -50,27 +50,29 @@ jQuery(function ($) {
             var bookInfo = book[i].split("@");
 
             // 리스트 추가
-            $("#booklist").append("<li><a class=\"bookCover c" + [i + 1] + "\" href=\"book_detail.html\"></a><div class=\"bookContent\"><div class=\"bookTitle t" + [i + 1] + "\"></div><span class=\"bookAuthor a" + [i + 1] + "\"></span><span class=\"bookId\">" + bookInfo[0] + "</span></div></li>");
+            $("#booklist").append("<li><a class=\"bookCover c" + (i + 1) + "\" href=\"book_detail.html\"></a><div class=\"bookContent\"><div class=\"bookTitle t" + (i + 1) + "\"></div><span class=\"bookAuthor a" + (i + 1) + "\"></span></div></li>");
 
             // 책 표지 추가
-            $(".c" + [i + 1]).append("<img src=\"" + bookInfo[4] + "\">");
+            $(".c" + (i + 1)).append("<img src=\"" + bookInfo[4] + "\">");
             
             // 책 제목 추가
             if (bookInfo[1] == "real") {
-                //실제책
-                $(".t" + [i + 1]).append("<a class=\"bookLink\" href=\"book_detail.html\">" + bookInfo[2] + "</a>");
+                //실제책 <span class=\"bookId i" + (i + 1) + "\">" + bookInfo[0] + "</span>
+                $(".t" + (i + 1)).append("<a class=\"bookLink\" href=\"book_detail" + bookInfo[0] + ".html\">" + bookInfo[2] + "</a>");
             } else {
                 //전자책
-                $(".t" + [i + 1]).append("<a class=\"bookLink\" href=\"book_detail.html\">" + bookInfo[2] + " [전자책]</a>");
+                $(".t" + (i + 1)).append("<a class=\"bookLink\" href=\"book_detail" + bookInfo[0] + ".html\">" + bookInfo[2] + " [전자책]</a>");
             }
                         
             // 책 저자명 추가
-            $(".a" + [i + 1]).text(bookInfo[3]);
+            $(".a" + (i + 1)).text(bookInfo[3]);
         }
     }
 
     //도서 상세페이지로 이동
-    $(".bookLink").on("click", function () {
-        alert("책 제목 클릭함");
-    });
+    // $(".l1").on("click", function () {
+    //     alert("책 제목 클릭함");
+    //     // var id = $(".bookId").text();
+    //     // $.cookie("B_Id", id, {expires: 1, path: "/"});
+    // });
 });

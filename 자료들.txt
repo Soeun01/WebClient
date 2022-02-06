@@ -1,3 +1,5 @@
+// library-info.html 도서리스트
+
 <li>
 							<a class="bookCover" href="book_info.html">
 								<img
@@ -27,7 +29,13 @@
 							</div>
 						</li>
 
+
+// book_detail?.html 전자 자료 원본
+
 <span class='icon-eBook'></span>&nbsp;전자자료
+
+
+// book_detail?.html 상세페이지 도서 정보
 
 <!-- 표지 -->
 								<div class="col-lg-2 detail-table-left">
@@ -134,4 +142,27 @@
 										</div>
 									</div>
 								</div>
+
+
+// book_rental.html 도서 대출 목록 리스트
+
+<li>
+									<a class="bookCover">
+										<img
+											src="https://bookthumb-phinf.pstatic.net/cover/211/229/21122940.jpg?type=m1&amp;udate=20211207">
+									</a>
+									<div class="bookContent">
+										<div class="bookTitle">
+											<a href="">
+												모두의 인공지능 : 인공지능에서 인공생명까지!
+											</a>
+										</div>
+										<span class="bookAuthor">강태원</span>
+									</div>
+									<div class="returnAndRenew">
+										<div class="rentalDate"><span>반납 기한 : 2022-02-17</span></div>
+										<div class="bookReturnBtn"><button>반납</button></div>
+										<div class="bookRenewBtn"><button>기간 연장 (0/3)</button></div>
+									</div>
+								</li>
 

@@ -37,7 +37,7 @@ jQuery(function ($) {
                     makeBook(data);
                 });
         }
-    });
+    })
 
     //도서 추가 함수 구현
     function makeBook(book) {
@@ -69,10 +69,5 @@ jQuery(function ($) {
         }
     }
 
-    //도서 상세페이지로 이동
-    // $(".l1").on("click", function () {
-    //     alert("책 제목 클릭함");
-    //     // var id = $(".bookId").text();
-    //     // $.cookie("B_Id", id, {expires: 1, path: "/"});
-    // });
+    
 });

@@ -8,8 +8,9 @@ jQuery(document).ready(function ($) {
     //처음 로딩시 현재 어떤 상태(로그인/로그아웃)인지에 따라 문자 변환
     $(function () {
         var cookieCheck = $.cookie("userId");
+        // alert(cookieCheck);
         // 쿠키가 없을 경우
-        if (cookieCheck == "") {
+        if (cookieCheck == null) {
             $(".login-logout-select").text("로그인");
             $(".access-name").text("");
         } else {    // 쿠키가 있을 경우
@@ -52,7 +53,7 @@ jQuery(document).ready(function ($) {
                 .then(response => response.json())
                 .then(data => {
                     var msg = data.split(",");
-                    // alert("[" + msg[0] + "] " + msg[1]);
+                    alert("[" + msg[0] + "] " + msg[1]);
                     location.reload();
                 });
         }

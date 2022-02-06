@@ -85,26 +85,22 @@
 				<div class="col-lg-12 text-center">
 					<div>
 						<h2 class="pageTitle">도서대출목록</h2>
+						<div class="addFunction">
+							<form class="alignBox">
+								<select class="select-value" name="align">
+									<option value="defalt">정렬방식</option>
+									<option value="asc">오름차순</option>
+									<option value="desc">내림차순</option>
+								</select>
+							</form>
+							<div class="rentalListSelect">
+								<input class="select-text" type="text" placeholder="검색할 도서 이름 입력">
+								<button class="select-btn">검색</button>
+							</div>
+						</div>						
 						<div class="rentallist">
 							<ul id="booklist">
-								<li>
-									<a class="bookCover" href="">
-										<img
-											src="https://bookthumb-phinf.pstatic.net/cover/211/229/21122940.jpg?type=m1&amp;udate=20211207">
-									</a>
-									<div class="bookContent">
-										<div class="bookTitle">
-											<a href="">
-												모두의 인공지능 : 인공지능에서 인공생명까지!
-											</a>
-										</div>
-										<span class="bookAuthor">강태원</span>
-										<div class="Btn">
-											<button class="bookReturnBtn">반납</button>
-											<button class="bookRenewBtn">기간 연장</button>
-										</div>
-									</div>
-								</li>
+								<!-- 동적 리스트 추가 -->
 							</ul>
 						</div>
 					</div>
@@ -158,6 +154,7 @@
 	<script src="./assets/js/jquery.nice-select.js"></script>
 	<script src="./assets/js/modal-video.js"></script>
 	<script src="./assets/js/main.js"></script>
+	<script src="./assets/js/library-rental.js"></script>
 
 </body>
 

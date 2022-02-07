@@ -32,9 +32,9 @@ jQuery(document).ready(function ($) {
                     } else {    //003,로그인 체크 실패
                         alert("[" + res[0] + "] " + res[1]);
                     }
-                });
+                })
         }
-    });
+    })
 
 
     // 로그인/로그아웃 버튼 클릭시 
@@ -53,7 +53,7 @@ jQuery(document).ready(function ($) {
                 .then(response => response.json())
                 .then(data => {
                     var msg = data.split(",");
-                    alert("[" + msg[0] + "] " + msg[1]);
+                    // alert("[" + msg[0] + "] " + msg[1]);
                     location.reload();
                 });
         }

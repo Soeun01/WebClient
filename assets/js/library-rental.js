@@ -9,14 +9,28 @@ jQuery(function ($) {
         //쿠키에 사용자 이름 가져오기
         var cookieCheck = $.cookie("userId");
 
-        fetch(url + "WSU_BookCheckOutList/" + cookieCheck)
+        //로그인 유무 확인
+        fetch(url + "WSU_LoginCheck/" + cookieCheck)
             .then(response => response.json())
             .then(data => {
-                var book = data[0].split("@");
-                console.log(book);
-                // $("#booklist").append("도서");
-                makeRentalBook(data);
-            });
+                var res = data.split(",");
+                // 로그인 중
+                if (res[0] == "001") {
+                    //도서 대출 목록 가져오기
+                    fetch(url + "WSU_BookCheckOutList/" + cookieCheck)
+                        .then(response => response.json())
+                        .then(data => {
+                            //도서리스트 추가
+                            makeRentalBook(data);
+                        })
+                } else if (res[0] == "002") { // 로그아웃 중
+                    alert("로그인이 필요합니다.");
+                    location.href = "login.html";
+                } else { //003,로그인 체크 실패
+                    alert("[" + res[0] + "] " + res[1]);
+                    location.href = "index.html";
+                }
+            })
     })
 
     //도서 추가 함수 구현
@@ -48,11 +62,11 @@ jQuery(function ($) {
             }
 
             // 책 저자명 추가
-            $(".a" + (i + 1)).text("작가이름");
+            // $(".a" + (i + 1)).text("작가이름");
 
             // 반납기한 추가
             var returndate = bookInfo[5].split(" ");
-            $(".d" + (i + 1)).append("<span>반납 기한 : ~" + returndate[0] + "</span>");
+            $(".d" + (i + 1)).append("<span>반납기한:" + returndate[0] + "</span>");
 
             // 반납 버튼 추가
             $(".rt" + (i + 1)).append("<button>반납</button>");

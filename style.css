@@ -2151,7 +2151,7 @@ select.form-control:not([size]):not([multiple]) {
 	display: flex;
 }
 
-li a img {
+li .bookCover img {
 	padding-right: 10px;
 	border: solid #bbb;
 	border-width: 0 1px 0 0;
@@ -2270,7 +2270,7 @@ li a img {
 
 .bookHeart img {
 	width: 25px;
-	margin: 10px;
+	margin: 10px 70px;
 }
 
 .bookHeart span {
@@ -2347,7 +2347,8 @@ li a img {
 
 
 /* =============== */
-/* 도서 대출 목록 페이지 */
+/* 도서 대출 목록 페이지  */
+/* 도서 찜 목록 페이지     */
 /* =============== */
 
 
@@ -2374,9 +2375,10 @@ li a img {
 }
 
 /* 검색창 */
-.rentalListSelect {
+.rentalListSelect,
+.heartListSelect {
 	display: flex;
-	height: 25px;
+	height: 28px;
 	width: 30%;
 	border: 1px solid #29376E;
 	background: #fff;
@@ -2400,10 +2402,16 @@ li a img {
 }
 
 /* 도서 대출 리스트 */
-.rentallist {
+/* 도서 찜 리스트 */
+.rentallist,
+.heartlist {
 	border-top: 2px solid #eee;
 	padding-top: 20px;
 	margin-bottom: 300px;
+}
+
+.heartlist .bookContent {
+	width: 90%;
 }
 
 .rentalDate,
@@ -2423,4 +2431,22 @@ li a img {
 
 .rentalDate {
 	font-size: small;
+}
+
+.heartBtn {
+	margin: 38px 10px;
+	width: 10%;
+}
+
+.heartBtn img {
+	width: 20px;
+}
+
+.heartBtn span {
+	font-size: small;
+}
+
+div a img {
+	border: 0;
+	padding-right: 5px;
 }

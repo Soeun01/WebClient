@@ -67,8 +67,33 @@ jQuery(function ($) {
     });
 
     //도서 찜 버튼
-    $(".bookHeart img").on("click", function () {
-
+    $(".bookHeart > img").on("click", function () {
+        var cookieCheck = $.cookie("userId");
+        var bookIdCheck = $(".page-bookId").text();
+        // 쿠키가 없을 경우
+        if (cookieCheck == null) {
+            
+        } else {    // 쿠키가 있을 경우
+            // 로그인 유무 확인
+            fetch(url + "WSU_BookHeart/" + cookieCheck + "/" + bookIdCheck)
+                .then(response => response.json())
+                .then(data => {
+                    alert(data);
+                    var res = data.split(",");
+                    // 로그인 중
+                    // if (res[0] == "001") {
+                    //     $(".login-logout-select").text("로그아웃");
+                    //     $(".access-name").text(cookieCheck + "님");
+                    //     // 연결된 링크를 없애버림
+                    //     $("a.login-logout-select").attr("href", "#");
+                    // } else if (res[0] == "002") { // 로그아웃 중
+                    //     $(".login-logout-select").text("로그인");
+                    //     $(".access-name").text("");
+                    // } else {    //003,로그인 체크 실패
+                    //     alert("[" + res[0] + "] " + res[1]);
+                    // }
+                })
+        }
     });
 
 });

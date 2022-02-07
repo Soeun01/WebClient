@@ -27,7 +27,7 @@ $(function () {
                             path: "/"
                         });
                         //얘를 제외한 모든게 됨
-                        // $(location).attr('href', 'index.html');
+                        location.href = "index.html";
                     } else { //로그인 실패
                         alert("[" + msg[0] + "] " + msg[1] + "\n" + msg[2]);
                     }

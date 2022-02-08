@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
         if (cookieCheck == null) {
             $(".login-logout-select").text("로그인");
             $(".access-name").text("");
-        } else {    // 쿠키가 있을 경우
+        } else { // 쿠키가 있을 경우
             // 로그인 유무 확인
             fetch(url + "WSU_LoginCheck/" + cookieCheck)
                 .then(response => response.json())
@@ -29,7 +29,8 @@ jQuery(document).ready(function ($) {
                     } else if (res[0] == "002") { // 로그아웃 중
                         $(".login-logout-select").text("로그인");
                         $(".access-name").text("");
-                    } else {    //003,로그인 체크 실패
+                        $("a.login-logout-select").attr("href", "login.html");
+                    } else { //003,로그인 체크 실패
                         alert("[" + res[0] + "] " + res[1]);
                     }
                 })
@@ -44,7 +45,7 @@ jQuery(document).ready(function ($) {
 
         // 로그인 버튼
         if (text == "로그인") {
-            location.href("login.html");
+            location.href = "login.html";
         } else { // 로그아웃 버튼
             var id = $(".access-name").text();
             var data = id.split("님");

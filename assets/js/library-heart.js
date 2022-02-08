@@ -35,13 +35,20 @@ jQuery(function ($) {
     })
 
     // 정렬 버튼
-    $(".").on("click", function() {
+    $("").on("click", function() {
         
     })
 
     // 검색 버튼
     $(".select-btn").on("click", function() {
-        
+        // console.log("클릭!");
+        var selectData = $(".serch-text").val();
+        if (selectData == "") {
+            $('.booklist li').show();
+        } else {
+            $('.booklist li').hide();
+            $(".booklist div:contains('" + selectData + "')").show();
+        }
     })
 
     //찜 해제 버튼 => 아예 안됨..ㅜㅜ

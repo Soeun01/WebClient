@@ -20,7 +20,7 @@ jQuery(function ($) {
         fetch(url + "WSU_BookRentalCheck/" + cookieCheck + "/" + bookId)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 var res = data.split(",");
 
                 if (res[0] == "011") { // 도서 본인이 대출 상태
@@ -36,7 +36,7 @@ jQuery(function ($) {
         fetch(url + "WSU_BookHeartCheck/" + cookieCheck + "/" + bookId)
             .then(response => response.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 var res = data.split(",");
 
                 if (res[0] == "021") { // 도서 찜 상태
@@ -54,7 +54,7 @@ jQuery(function ($) {
         var btnName = $(".rentarBtn").text();
 
         if (btnName == "대출") { // 대출 버튼
-            console.log(btnName);
+            // console.log(btnName);
             fetch(url + "WSU_BookCheckOut/" + cookieCheck + "/" + bookId)
                 .then(response => response.json())
                 .then(data => {
@@ -68,7 +68,7 @@ jQuery(function ($) {
                     }
                 })
         } else {    // 반납 버튼
-            console.log(btnName);
+            // console.log(btnName);
             fetch(url + "WSU_BookReturn/" + cookieCheck + "/" + bookId)
                 .then(response => response.json())
                 .then(data => {
@@ -76,10 +76,9 @@ jQuery(function ($) {
                     var res = data.split(",");
                     
                     if(res[0] == "140") {   // 반납 성공
-                        // location.reload();
+                        location.reload();
                     } else if(res[0] == "141") {    // 반납 성공 + 연체 반납
                         alert(res[2]);
-                        // location.reload();
                     } else {    // 반납 실패 + 사유
                         alert("[" + res[1] + "] " + res[2]);
                     }

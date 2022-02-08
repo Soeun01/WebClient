@@ -2456,6 +2456,12 @@ div a img {
 	padding-right: 5px;
 }
 
+.listReturnBookId,
+.listRenewBookId {
+	display: none;
+}
+
+
 /*  */
 /* 로그인 페이지 테스트 중 */
 /*  */

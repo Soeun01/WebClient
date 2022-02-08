@@ -45,7 +45,7 @@ jQuery(function ($) {
             var bookInfo = book[i].split("@");
 
             // 리스트 추가
-            $("#booklist").append("<li class=\"" + bookInfo[0] + "\"><a class=\"bookCover c" + (i + 1) + "\" href=\"book_detail.html\"></a><div class=\"bookContent\"><div class=\"bookTitle t" + (i + 1) + "\"></div><span class=\"bookAuthor a" + (i + 1) + "\"></span></div><div class=\"heartBtn\"><a class=\"heartImgBtn" + (i + 1) + "\"></a></div></li>");
+            $("#booklist").append("<li class=\"" + bookInfo[0] + "\"><a class=\"bookCover c" + (i + 1) + "\" href=\"book_detail.html\"></a><div class=\"bookContent\"><div class=\"bookTitle t" + (i + 1) + "\"></div><span class=\"bookAuthor a" + (i + 1) + "\"></span></div><div class=\"heartBtn hb" + (i + 1) + "\"></div></li>");
 
             // 책 표지 추가
             $(".c" + (i + 1)).append("<img src=\"" + bookInfo[4] + "\">");
@@ -63,20 +63,15 @@ jQuery(function ($) {
             $(".a" + (i + 1)).text(bookInfo[3]);
 
             //찜 버튼 추가
-            $(".heartImgBtn" + (i + 1)).append("<img src=\"./assets/img/library/redHeart.png\">");
-            $(".heartImgBtn" + (i + 1)).append("<span class=\"hideBookId\">" + bookInfo[0] + "</span>");
+            $(".hb" + (i + 1)).append("<img src=\"./assets/img/library/redHeart.png\">");
+            // $(".hb" + (i + 1)).append("<span class=\"hideBookId\">" + bookInfo[0] + "</span>");
+            // $(".hb" + (i + 1)).append("<button class=\"unheartbtn\">찜해제하기</button>");
             
         }
     }
 
-    $(".heartTextBtn1").on("click", function () {
-        // alert($(".heartTextBtn1 > span").text());
-        alert();
-    })
-
-    $(".heartBtn").on("click", function () {
+    $(".hb1 > img").on("click", function () {
         console.log("실행");
-        console.log($(".heartTextBtn1 span").text());
     })
 
 });

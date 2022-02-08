@@ -1835,7 +1835,7 @@ select.form-control:not([size]):not([multiple]) {
 
 
 .library-info.header-area {
-	background-image: url(./assets/img/library/single-blog-hero-bg.jpg)
+	background-image: url(./assets/img/library/library-info-bg.jpg)
 }
 
 .library-info {
@@ -2345,6 +2345,11 @@ li .bookCover img {
     color: #fff;
 }
 
+/* 대출/반납 버튼 */
+button[disabled="disabled"] {
+	background-color: #aaaaaa;
+}
+
 
 /* =============== */
 /* 도서 대출 목록 페이지  */
@@ -2449,4 +2454,69 @@ li .bookCover img {
 div a img {
 	border: 0;
 	padding-right: 5px;
+}
+
+/*  */
+/* 로그인 페이지 테스트 중 */
+/*  */
+
+.test-login.header-area {
+	background-image: url(./assets/img/Character.png);
+	/* height: auto; */
+}
+
+.test-login {
+	position: relative;
+	z-index: 2;
+}
+
+/* 배경에 약간 검은 막 생기는거 이거 때문임 */
+/* .test-login:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 90px;
+	background: #29376e;
+	content: "";
+	z-index: -1;
+} */
+
+.test-login .hero-text h6 {
+	padding-left: 0;
+}
+
+.test-login .hero-text h6:before {
+	background: transparent;
+	text-transform: uppercase;
+}
+
+.test-login .hero-text h1 {
+	margin-bottom: 0;
+}
+
+.test-login .owl-nav div {
+	position: absolute;
+	left: -90px;
+	top: 50%;
+	color: #8c84d8;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 700;
+	transition: 0.3s
+}
+
+.test-login .owl-nav div:hover {
+	color: #fff;
+}
+
+.test-login .owl-nav div.owl-next {
+	left: auto;
+	right: -90px;
+}
+
+.test-login .owl-nav div i.fa {
+	position: relative;
+	top: 0;
+	margin: 0 14px;
 }

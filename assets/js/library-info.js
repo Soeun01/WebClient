@@ -50,7 +50,7 @@ jQuery(function ($) {
             var bookInfo = book[i].split("@");
 
             // 리스트 추가
-            $("#booklist").append("<li><a class=\"bookCover c" + (i + 1) + "\" href=\"book_detail.html\"></a><div class=\"bookContent\"><div class=\"bookTitle t" + (i + 1) + "\"></div><span class=\"bookAuthor a" + (i + 1) + "\"></span></div></li>");
+            $("#booklist").append("<li><a class=\"bookCover c" + (i + 1) + "\" href=\"book_detail" + bookInfo[0] + ".html\"></a><div class=\"bookContent\"><div class=\"bookTitle t" + (i + 1) + "\"></div><span class=\"bookAuthor a" + (i + 1) + "\"></span></div></li>");
 
             // 책 표지 추가
             $(".c" + (i + 1)).append("<img src=\"" + bookInfo[4] + "\">");

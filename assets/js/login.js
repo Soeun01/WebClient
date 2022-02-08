@@ -21,11 +21,13 @@ $(function () {
                     //로그인 성공
                     if (msg[0] == "100") {
                         alert("[" + msg[0] + "] " + msg[1] + "\n" + msg[2]);
+                        
                         // 쿠키 생성
                         $.cookie("userId", id, {
                             expires: 1,
                             path: "/"
                         });
+                        
                         //얘를 제외한 모든게 됨
                         location.href = "index.html";
                     } else { //로그인 실패

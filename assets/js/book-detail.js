@@ -7,30 +7,29 @@ jQuery(function ($) {
     var cookieCheck = $.cookie("userId"); //유저 아이디(쿠키)
     var bookId = $(".page-bookId").text(); //책 아이디
 
-    //페이지 로딩시 실행
+    // 페이지 로딩시 실행
     $(function () {
-        //도서 상세 정보 출력
+        // 도서 상세 정보 출력
         fetch(url + "WSU_BookInfoSelect/" + bookId)
             .then(response => response.json())
             .then(data => {
                 makeBookDetail(data);
             });
 
-        //대출 현황 확인
+        // 대출 현황 확인
         fetch(url + "WSU_BookRentalCheck/" + cookieCheck + "/" + bookId)
             .then(response => response.json())
             .then(data => {
                 console.log(data);
                 var res = data.split(",");
 
-                // 여기 수정할 차례
-                // if(res[0] == "011") {   // 도서 본인이 대출 상태
-                //     $(".rentarBtn").text("반납");
-                // } else if(res[0] == "013") {   // 도서 반납 상태
-                //     $(".rentarBtn").text("대출");
-                // } else {   // 도서 다른 사람이 대출 상태 & 도서 대출 현황 확인 실패
-                //     $(".rentarBtn").attr("disabled", false);
-                // }
+                if (res[0] == "011") { // 도서 본인이 대출 상태
+                    $(".rentarBtn").text("반납");
+                } else if (res[0] == "013") { // 도서 반납 상태
+                    $(".rentarBtn").text("대출");
+                } else { // 대출 반납 
+                    $(".rentarBtn").attr("disabled", false);
+                }
             })
 
         // 찜 유무 확인
@@ -42,20 +41,53 @@ jQuery(function ($) {
 
                 if (res[0] == "021") { // 도서 찜 상태
                     $(".bookHeart > img").attr("src", "./assets/img/library/redHeart.png");
-                } else if(res[0] == "022") { // 도서 찜해제 상태
+                } else if (res[0] == "022") { // 도서 찜해제 상태
                     $(".bookHeart > img").attr("src", "./assets/img/library/heart.png");
-                } else {    // 도서 찜 유무 확인 실패
+                } else { // 도서 찜 유무 확인 실패
                     console.log("도서 찜 유무 확인 실패");
                 }
             })
     })
 
-    //도서 대출/반납/예약 버튼
+    // 도서 대출/반납/예약 버튼
     $(".rentarBtn").on("click", function () {
-        console.log("대출 버튼 클릭");
+        var btnName = $(".rentarBtn").text();
+
+        if (btnName == "대출") { // 대출 버튼
+            console.log(btnName);
+            fetch(url + "WSU_BookCheckOut/" + cookieCheck + "/" + bookId)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    var res = data.split(",");
+                    
+                    if(res[0] == "130") {   // 대출 성공
+                        location.reload();
+                    } else {    // 대출 실패 + 사유
+                        alert("[" + res[1] + "] " + res[2]);
+                    }
+                })
+        } else {    // 반납 버튼
+            console.log(btnName);
+            fetch(url + "WSU_BookReturn/" + cookieCheck + "/" + bookId)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    var res = data.split(",");
+                    
+                    if(res[0] == "140") {   // 반납 성공
+                        // location.reload();
+                    } else if(res[0] == "141") {    // 반납 성공 + 연체 반납
+                        alert(res[2]);
+                        // location.reload();
+                    } else {    // 반납 실패 + 사유
+                        alert("[" + res[1] + "] " + res[2]);
+                    }
+                })
+        }
     });
 
-    //도서 찜 버튼
+    // 도서 찜 버튼
     $(".bookHeart > img").on("click", function () {
         // 1) 찜 유무 확인
         fetch(url + "WSU_BookHeartCheck/" + cookieCheck + "/" + bookId)
@@ -71,10 +103,10 @@ jQuery(function ($) {
                             console.log(data);
                             var res = data.split(",");
 
-                            if(res[0] == "180") {   // 3-1) 도서 찜 해제 성공
+                            if (res[0] == "180") { // 3-1) 도서 찜 해제 성공
                                 console.log(res[1]);
                                 $(".bookHeart > img").attr("src", "./assets/img/library/heart.png");
-                            } else {    // 3-2) 도서 찜 해제 실패
+                            } else { // 3-2) 도서 찜 해제 실패
                                 console.log(res[1]);
                             }
                         })
@@ -85,12 +117,12 @@ jQuery(function ($) {
                             console.log(data);
                             var res = data.split(",");
 
-                            if(res[0] == "170") {   // 4-1) 도서 찜 성공
+                            if (res[0] == "170") { // 4-1) 도서 찜 성공
                                 console.log(res[1]);
                                 $(".bookHeart > img").attr("src", "./assets/img/library/redHeart.png");
-                            } else if (res[0] == "171") {    // 4-2) 실패, 이미 찜한 도서
-                                console.log("[" +res[1] + "] " + res[2]);
-                            } else {    // 4-3) 도서 찜 실패
+                            } else if (res[0] == "171") { // 4-2) 실패, 이미 찜한 도서
+                                console.log("[" + res[1] + "] " + res[2]);
+                            } else { // 4-3) 도서 찜 실패
                                 console.log(res[1]);
                             }
                         })
@@ -102,7 +134,7 @@ jQuery(function ($) {
     });
 
 
-    //도서 추가 함수 구현
+    // 도서 추가 함수 구현
     function makeBookDetail(book) {
         // 표지 이미지 추가
         $(".detail-bookCover").append("<img src=\"" + book.Thumbnail + "\">");

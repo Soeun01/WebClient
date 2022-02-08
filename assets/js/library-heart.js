@@ -34,6 +34,22 @@ jQuery(function ($) {
 
     })
 
+    // 정렬 버튼
+    $(".").on("click", function() {
+        
+    })
+
+    // 검색 버튼
+    $(".select-btn").on("click", function() {
+        
+    })
+
+    //찜 해제 버튼 => 아예 안됨..ㅜㅜ
+    $(".hb1 > img").on("click", function () {
+        console.log("실행");
+    })
+
+
     //도서 추가 함수 구현
     function makeHeartBook(book) {
         for (var i = 0; i < book.length; i++) {
@@ -69,9 +85,4 @@ jQuery(function ($) {
             
         }
     }
-
-    $(".hb1 > img").on("click", function () {
-        console.log("실행");
-    })
-
 });

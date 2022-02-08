@@ -4,36 +4,57 @@ jQuery(function ($) {
     // const url = "http://localhost:58156/Service1.svc/";
     const url = "http://localhost:59755/WSUforestService.svc/";
 
-    //도서 대출 목록 출력 : 페이지 로딩시 실행
+    // 도서 대출 목록 출력 : 페이지 로딩시 실행
     $(function () {
-        //쿠키에 사용자 이름 가져오기
+        // 쿠키에 사용자 이름 가져오기
         var cookieCheck = $.cookie("userId");
 
-        //로그인 유무 확인
+        // 로그인 유무 확인
         fetch(url + "WSU_LoginCheck/" + cookieCheck)
             .then(response => response.json())
             .then(data => {
                 var res = data.split(",");
                 // 로그인 중
                 if (res[0] == "001") {
-                    //도서 대출 목록 가져오기
+                    // 도서 대출 목록 가져오기
                     fetch(url + "WSU_BookCheckOutList/" + cookieCheck)
                         .then(response => response.json())
                         .then(data => {
-                            //도서리스트 추가
+                            // 도서리스트 추가
                             makeRentalBook(data);
                         })
-                } else if (res[0] == "002") { // 로그아웃 중
+                } else if (res[0] == "002") {   // 로그아웃 중
                     alert("로그인이 필요합니다.");
                     location.href = "login.html";
-                } else { //003,로그인 체크 실패
+                } else {    // 로그인 체크 실패
                     alert("[" + res[0] + "] " + res[1]);
                     location.href = "index.html";
                 }
             })
     })
 
-    //도서 추가 함수 구현
+    // 정렬 버튼
+    $(".").on("click", function() {
+        
+    })
+
+    // 검색 버튼
+    $(".select-btn").on("click", function() {
+
+    })
+    
+    // 반납 버튼
+    $(".bookReturnBtn > button").on("click", function() {
+
+    })
+
+    // 기간 연장 버튼
+    $(".bookRenewBtn > button").on("click", function() {
+
+    })
+
+
+    // 도서 추가 함수 구현
     function makeRentalBook(book) {
         for (var i = 0; i < book.length; i++) {
             //bookInfo[0] = W_ID 유저 아이디
@@ -76,6 +97,4 @@ jQuery(function ($) {
 
         }
     }
-
-
 });

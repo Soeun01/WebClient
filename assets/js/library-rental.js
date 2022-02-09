@@ -38,19 +38,128 @@ jQuery(function ($) {
 
     // })
 
+    //도서 반납 & 도서 기한 연장
+    //#region
     // 반납 버튼1
     $(document).on("click", ".rt1 button", function () {
         var bookId = $(".listReturnBookId").text()[0];
-
         returnBook(bookId);
     })
 
     // 기한 연장 버튼1
     $(document).on("click", ".rn1 button", function () {
         var bookId = $(".listRenewBookId").text()[0];
-
         renewBook(bookId);
     })
+
+    // 반납 버튼2
+    $(document).on("click", ".rt2 button", function () {
+        var bookId = $(".listReturnBookId").text()[1];
+        returnBook(bookId);
+    })
+
+    // 기한 연장 버튼2
+    $(document).on("click", ".rn2 button", function () {
+        var bookId = $(".listRenewBookId").text()[1];
+        renewBook(bookId);
+    })
+
+    // 반납 버튼3
+    $(document).on("click", ".rt3 button", function () {
+        var bookId = $(".listReturnBookId").text()[2];
+        returnBook(bookId);
+    })
+
+    // 기한 연장 버튼3
+    $(document).on("click", ".rn3 button", function () {
+        var bookId = $(".listRenewBookId").text()[2];
+        renewBook(bookId);
+    })
+
+    // 반납 버튼4
+    $(document).on("click", ".rt4 button", function () {
+        var bookId = $(".listReturnBookId").text()[3];
+        returnBook(bookId);
+    })
+
+    // 기한 연장 버튼4
+    $(document).on("click", ".rn4 button", function () {
+        var bookId = $(".listRenewBookId").text()[3];
+        renewBook(bookId);
+    })
+
+    // 반납 버튼5
+    $(document).on("click", ".rt5 button", function () {
+        var bookId = $(".listReturnBookId").text()[4];
+        returnBook(bookId);
+    })
+
+    // 기한 연장 버튼5
+    $(document).on("click", ".rn5 button", function () {
+        var bookId = $(".listRenewBookId").text()[4];
+        renewBook(bookId);
+    })
+
+    // 반납 버튼6
+    $(document).on("click", ".rt6 button", function () {
+        var bookId = $(".listReturnBookId").text()[5];
+        returnBook(bookId);
+    })
+
+    // 기한 연장 버튼6
+    $(document).on("click", ".rn6 button", function () {
+        var bookId = $(".listRenewBookId").text()[5];
+        renewBook(bookId);
+    })
+
+    // 반납 버튼7
+    $(document).on("click", ".rt7 button", function () {
+        var bookId = $(".listReturnBookId").text()[6];
+        returnBook(bookId);
+    })
+
+    // 기한 연장 버튼7
+    $(document).on("click", ".rn7 button", function () {
+        var bookId = $(".listRenewBookId").text()[6];
+        renewBook(bookId);
+    })
+
+    // 반납 버튼8
+    $(document).on("click", ".rt8 button", function () {
+        var bookId = $(".listReturnBookId").text()[7];
+        returnBook(bookId);
+    })
+
+    // 기한 연장 버튼8
+    $(document).on("click", ".rn8 button", function () {
+        var bookId = $(".listRenewBookId").text()[7];
+        renewBook(bookId);
+    })
+
+    // 반납 버튼9
+    $(document).on("click", ".rt9 button", function () {
+        var bookId = $(".listReturnBookId").text()[8];
+        returnBook(bookId);
+    })
+
+    // 기한 연장 버튼9
+    $(document).on("click", ".rn9 button", function () {
+        var bookId = $(".listRenewBookId").text()[8];
+        renewBook(bookId);
+    })
+
+    // 반납 버튼10
+    $(document).on("click", ".rt10 button", function () {
+        var bookId = $(".listReturnBookId").text()[9];
+        returnBook(bookId);
+    })
+
+    // 기한 연장 버튼10
+    $(document).on("click", ".rn10 button", function () {
+        var bookId = $(".listRenewBookId").text()[9];
+        renewBook(bookId);
+    })
+    //#endregion
 
 
     // 도서 추가 함수 구현

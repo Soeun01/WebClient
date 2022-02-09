@@ -37,6 +37,17 @@ jQuery(document).ready(function ($) {
         }
     })
 
+    //창 종료시 종료 직전에 실행
+    // window.addEventListener("beforeunload", (event) => {
+    //     event.preventDefault();
+
+    //     var cookieCheck = $.cookie("userId");
+
+    //     //종료시 자동 로그아웃
+    //     fetch(url + "WSU_Logout/" + cookieCheck)
+    //         .then(response => response.json())
+    //         .then(data => console.log("자동 로그아웃"));
+    // });
 
     // 로그인/로그아웃 버튼 클릭시 
     $(".login-logout-select").on("click", function () {

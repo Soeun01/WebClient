@@ -4,10 +4,11 @@ jQuery(function ($) {
     // const url = "http://localhost:58156/Service1.svc/";
     const url = "http://localhost:59755/WSUforestService.svc/";
 
+    //쿠키에 사용자 이름 가져오기
+    var cookieCheck = $.cookie("userId");
+
     //도서 대출 목록 출력 : 페이지 로딩시 실행
     $(function () {
-        //쿠키에 사용자 이름 가져오기
-        var cookieCheck = $.cookie("userId");
 
         //로그인 유무 확인
         fetch(url + "WSU_LoginCheck/" + cookieCheck)
@@ -35,26 +36,75 @@ jQuery(function ($) {
     })
 
     // 정렬 버튼
-    $("").on("click", function() {
-        
+    $("").on("click", function () {
+
     })
 
     // 검색 버튼
-    $(".select-btn").on("click", function() {
-        // console.log("클릭!");
-        var selectData = $(".serch-text").val();
-        if (selectData == "") {
-            $('.booklist li').show();
-        } else {
-            $('.booklist li').hide();
-            $(".booklist div:contains('" + selectData + "')").show();
-        }
+    $(".select-btn").on("click", function () {
+        // var selectData = $(".serch-text").val();
+        // if (selectData == "") {
+        //     $('.booklist li').show();
+        // } else {
+        //     $('.booklist li').hide();
+        //     $(".booklist div:contains('" + selectData + "')").show();
+        // }
     })
 
-    //찜 해제 버튼 => 아예 안됨..ㅜㅜ
-    $(".hb1 > img").on("click", function () {
-        console.log("실행");
+
+    //도서 찜 해제
+    //#region
+    // 찜 해제 버튼1
+    $(document).on("click", ".hb1 img", function () {
+        var bookId = $(".bookId").text()[0];
+        unheartBook(bookId);
     })
+
+    $(document).on("click", ".hb2 img", function () {
+        var bookId = $(".bookId").text()[1];
+        unheartBook(bookId);
+    })
+
+    $(document).on("click", ".hb3 img", function () {
+        var bookId = $(".bookId").text()[2];
+        unheartBook(bookId);
+    })
+    
+    $(document).on("click", ".hb4 img", function () {
+        var bookId = $(".bookId").text()[3];
+        unheartBook(bookId);
+    })
+
+    $(document).on("click", ".hb5 img", function () {
+        var bookId = $(".bookId").text()[4];
+        unheartBook(bookId);
+    })
+    
+    $(document).on("click", ".hb6 img", function () {
+        var bookId = $(".bookId").text()[5];
+        unheartBook(bookId);
+    })
+    
+    $(document).on("click", ".hb7 img", function () {
+        var bookId = $(".bookId").text()[6];
+        unheartBook(bookId);
+    })
+
+    $(document).on("click", ".hb8 img", function () {
+        var bookId = $(".bookId").text()[7];
+        unheartBook(bookId);
+    })
+    
+    $(document).on("click", ".hb9 img", function () {
+        var bookId = $(".bookId").text()[8];
+        unheartBook(bookId);
+    })
+    
+    $(document).on("click", ".hb10 img", function () {
+        var bookId = $(".bookId").text()[9];
+        unheartBook(bookId);
+    })
+    //#endregion
 
 
     //도서 추가 함수 구현
@@ -87,9 +137,24 @@ jQuery(function ($) {
 
             //찜 버튼 추가
             $(".hb" + (i + 1)).append("<img src=\"./assets/img/library/redHeart.png\">");
-            // $(".hb" + (i + 1)).append("<span class=\"hideBookId\">" + bookInfo[0] + "</span>");
-            // $(".hb" + (i + 1)).append("<button class=\"unheartbtn\">찜해제하기</button>");
-            
+            $(".hb" + (i + 1)).append("<span class=\"bookId\">" + bookInfo[0] + "</span>");
+
         }
+    }
+
+    //도서 찜 해제 함수
+    function unheartBook(bookID) {
+        fetch(url + "WSU_BookUnHeart/" + cookieCheck + "/" + bookID)
+            .then(response => response.json())
+            .then(data => {
+                // console.log(data);
+                var res = data.split(",");
+
+                if (res[0] == "180") { // 3-1) 도서 찜 해제 성공
+                    location.reload();
+                } else { // 3-2) 도서 찜 해제 실패
+                    alert(res[1]);
+                }
+            })
     }
 });

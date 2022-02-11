@@ -25,7 +25,7 @@ jQuery(function ($) {
                             makeHeartBook(data);
                         });
                 } else if (res[0] == "002") { // 로그아웃 중
-                    alert("로그인이 필요합니다.");
+                    alert("로그인이 필요한 서비스입니다.");
                     location.href = "login.html";
                 } else { //003,로그인 체크 실패
                     alert("[" + res[0] + "] " + res[1]);

@@ -2,13 +2,13 @@ jQuery(document).ready(function ($) {
     // const url = "http://localhost:58156/Service1.svc/";
     const url = "http://localhost:59755/WSUforestService.svc/";
 
+    var cookieCheck = $.cookie("userId");
+
     // 로그인 버튼 : login-logout-select
     // 로그인한 사람 아이디 : access-name
 
     //처음 로딩시 현재 어떤 상태(로그인/로그아웃)인지에 따라 문자 변환
     $(function () {
-        var cookieCheck = $.cookie("userId");
-        // alert(cookieCheck);
         // 쿠키가 없을 경우
         if (cookieCheck == null) {
             $(".login-logout-select").text("로그인");
@@ -20,12 +20,16 @@ jQuery(document).ready(function ($) {
                 .then(data => {
                     // alert(data);
                     var res = data.split(",");
-                    // 로그인 중
-                    if (res[0] == "001") {
+
+                    if (res[0] == "001") { // 로그인 중
                         $(".login-logout-select").text("로그아웃");
-                        $(".access-name").text(cookieCheck + "님");
-                        // 연결된 링크를 없애버림
+                        $(".access-name").text(res[2] + "님");
+
+                        // 로그인/아웃 버튼 연결된 링크를 없애버림
                         $("a.login-logout-select").attr("href", "#");
+
+                        // 게임접속 버튼 링크 변경
+                        $("a.gamestart").attr("href", "sample://");
                     } else if (res[0] == "002") { // 로그아웃 중
                         $(".login-logout-select").text("로그인");
                         $(".access-name").text("");
@@ -37,18 +41,6 @@ jQuery(document).ready(function ($) {
         }
     })
 
-    //창 종료시 종료 직전에 실행
-    // window.addEventListener("beforeunload", (event) => {
-    //     event.preventDefault();
-
-    //     var cookieCheck = $.cookie("userId");
-
-    //     //종료시 자동 로그아웃
-    //     fetch(url + "WSU_Logout/" + cookieCheck)
-    //         .then(response => response.json())
-    //         .then(data => console.log("자동 로그아웃"));
-    // });
-
     // 로그인/로그아웃 버튼 클릭시 
     $(".login-logout-select").on("click", function () {
         // 버튼 이름을 가져오기
@@ -58,10 +50,7 @@ jQuery(document).ready(function ($) {
         if (text == "로그인") {
             location.href = "login.html";
         } else { // 로그아웃 버튼
-            var id = $(".access-name").text();
-            var data = id.split("님");
-
-            fetch(url + "WSU_Logout/" + data[0])
+            fetch(url + "WSU_Logout/" + cookieCheck)
                 .then(response => response.json())
                 .then(data => {
                     var msg = data.split(",");
@@ -71,6 +60,26 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    //게임 참가 버튼
+    $(".gamestart").on("click", function () {
+        // 로그인 유무 확인
+        fetch(url + "WSU_LoginCheck/" + cookieCheck)
+            .then(response => response.json())
+            .then(data => {
+                // alert(data);
+                var res = data.split(",");
+
+                if (res[0] == "001") { // 로그인 중
+                    // 게임접속 버튼 링크 변경
+                    $("a.gamestart").attr("href", "sample://");
+                } else if (res[0] == "002") { // 로그아웃 중
+                    alert("로그인이 필요한 서비스입니다.");
+                    location.href = "login.html";
+                } else { //003,로그인 체크 실패
+                    alert("[" + res[0] + "] " + res[1]);
+                }
+            })
+    })
 
     //navbar click add class active
     $(".navbar-nav").on("click", "li", function () {

@@ -6,6 +6,7 @@ jQuery(function ($) {
 
     var cookieCheck = $.cookie("userId"); //유저 아이디(쿠키)
     var bookId = $(".page-bookId").text(); //책 아이디
+    console.log(cookieCheck + "\t" + bookId);
 
     // 페이지 로딩시 실행
     $(function () {
@@ -23,7 +24,7 @@ jQuery(function ($) {
                             makeBookDetail(data);
                         });
                 } else if (res[0] == "002") { // 로그아웃 중
-                    alert("로그인이 필요합니다.");
+                    alert("로그인이 필요한 서비스입니다.");
                     location.href = "login.html";
                 } else { // 로그인 체크 실패
                     alert("[" + res[0] + "] " + res[1]);
@@ -35,7 +36,7 @@ jQuery(function ($) {
         fetch(url + "WSU_BookRentalCheck/" + cookieCheck + "/" + bookId)
             .then(response => response.json())
             .then(data => {
-                // console.log(data);
+                console.log(data);
                 var res = data.split(",");
 
                 if (res[0] == "011") { // 도서 본인이 대출 상태

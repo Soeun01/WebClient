@@ -219,7 +219,7 @@ a.btn-light {
 	text-transform: uppercase;
 	font-size: 12px;
 	font-weight: 600;
-	background: #6e45e2;
+	background: #3384cd;
 	border: none;
 	border-radius: 50px;
 	transition: all 0.3s ease-in-out;
@@ -1789,7 +1789,7 @@ select.form-control:not([size]):not([multiple]) {
 }
 
 #loginBtn {
-	background: #6e45e2;
+	background: #3384cd;
 	text-transform: uppercase;
 	font-size: 12px;
 	font-weight: 700;
@@ -2459,6 +2459,89 @@ div a img {
 .listReturnBookId,
 .listRenewBookId {
 	display: none;
+}
+
+
+/* =========== */
+/* 이용 안내 페이지 */
+/* =========== */
+
+.help-page.header-area {
+	background-image: url(./assets/img/help/forest-trees.jpg);
+	height: 600px;
+}
+
+.help-page {
+	position: relative;
+	z-index: 2;
+}
+
+/* 배경에 약간 검은 막 생기는거 이거 때문임 */
+.help-page:after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 90px;
+	background: #29376e;
+	content: "";
+	z-index: -1;
+}
+
+.help-page .hero-text h6 {
+	padding-left: 0;
+}
+
+.help-page .hero-text h6:before {
+	background: transparent;
+	text-transform: uppercase;
+}
+
+.help-page .hero-text h1 {
+	margin-bottom: 0;
+}
+
+.help-page .owl-nav div {
+	position: absolute;
+	left: -90px;
+	top: 50%;
+	color: #8c84d8;
+	text-transform: uppercase;
+	font-size: 12px;
+	font-weight: 700;
+	transition: 0.3s
+}
+
+.help-page .owl-nav div:hover {
+	color: #fff;
+}
+
+.help-page .owl-nav div.owl-next {
+	left: auto;
+	right: -90px;
+}
+
+.help-page .owl-nav div i.fa {
+	position: relative;
+	top: 0;
+	margin: 0 14px;
+}
+
+.helpIframe h1 {
+	font-weight: bold;
+}
+
+.introduceHelp {
+	text-align: center;
+}
+
+.introduceHelp h3 {
+	/* font-weight: bold; */
+	margin-bottom: 50px;
+}
+
+.introduceHelp img {
+	width: 800px;
 }
 
 

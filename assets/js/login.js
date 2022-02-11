@@ -20,7 +20,7 @@ $(function () {
                     var msg = data.split(",");
                     //로그인 성공
                     if (msg[0] == "100") {
-                        alert("[" + msg[0] + "] " + msg[1] + "\n" + msg[2]);
+                        // alert("[" + msg[0] + "] " + msg[1] + "\n" + msg[2]);
                         
                         // 쿠키 생성
                         $.cookie("userId", id, {
@@ -32,6 +32,7 @@ $(function () {
                         location.href = "index.html";
                     } else { //로그인 실패
                         alert("[" + msg[0] + "] " + msg[1] + "\n" + msg[2]);
+                        location.reload();
                     }
                 });
         }

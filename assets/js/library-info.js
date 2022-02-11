@@ -61,9 +61,9 @@ jQuery(function ($) {
                 $(".t" + (i + 1)).append("<a class=\"bookLink\" href=\"book_detail" + bookInfo[0] + ".html\">" + bookInfo[2] + "</a>");
             } else {
                 //전자책
-                $(".t" + (i + 1)).append("<a class=\"bookLink\" href=\"book_detail" + bookInfo[0] + ".html\">" + bookInfo[2] + " [전자책]</a>");
+                $(".t" + (i + 1)).append("<a class=\"bookLink\" href=\"book_detail" + bookInfo[0] + ".html\">" + bookInfo[2] + " [EBook]</a>");
             }
-                        
+
             // 책 저자명 추가
             $(".a" + (i + 1)).text(bookInfo[3]);
         }

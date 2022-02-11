@@ -1,6 +1,6 @@
 # WebClient
 템플릿 수정 중<br>
-https://bootstrapthemes.co/item/misocial-multi-page-html-5-template/
+부트스트랩에서 제공하는 무료 테마 https://bootstrapthemes.co/item/misocial-multi-page-html-5-template/
 
 # 🥕구현예정
 - 도서 대출 기간 연장

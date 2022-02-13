@@ -188,3 +188,28 @@
 									</div>
 								</li>
 
+
+<ul class="tabs">
+							<li class="tab-link current" data-tab="tab-1">도서 검색</li>
+							<li class="tab-link" data-tab="tab-2">도서 상세 정보</li>
+							<li class="tab-link" data-tab="tab-3">도서 대출 목록</li>
+							<li class="tab-link" data-tab="tab-4">도서 찜 목록</li>
+							<li class="tab-link" data-tab="tab-5">메타버스 도움말</li>
+						</ul>
+
+						<div id="tab-1" class="tab-content current">
+							<img src="./assets/img/help/help-search1.png">
+							<img src="./assets/img/help/help-search2.png">
+						</div>
+						<div id="tab-2" class="tab-content">
+							<img src="./assets/img/help/help-bookInfo.png">
+						</div>
+						<div id="tab-3" class="tab-content">
+							<img src="./assets/img/help/help-rental.png">
+						</div>
+						<div id="tab-4" class="tab-content">
+							<img src="./assets/img/help/help-heart.png">
+						</div>
+						<div id="tab-5" class="tab-content">
+							<img src="./assets/img/help/help-unity.png">
+						</div>

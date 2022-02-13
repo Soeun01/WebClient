@@ -1228,7 +1228,7 @@ a.scroll-down:hover {
 
 
 .feature-page.header-area {
-	background-image: url(./assets/img/features/feature-hero-bg.jpg)
+	background-image: url(./assets/img/character.png)
 }
 
 .feature-page.header-area {
@@ -1252,12 +1252,12 @@ a.scroll-down:hover {
 	height: 100%;
 	content: "";
 	z-index: -1;
-	opacity: 0.75;
-	background: #7156e0;
-	background: -moz-linear-gradient(left, #7156e0 0%, #86c9cf 100%);
-	background: -webkit-linear-gradient(left, #7156e0 0%, #86c9cf 100%);
-	background: linear-gradient(to right, #7156e0 0%, #86c9cf 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7156e0', endColorstr='#86c9cf', GradientType=1);
+	opacity: 0.3;
+	background: #79ace7;
+	background: -moz-linear-gradient(left, #9a79e7 0%, #79ace7 100%);
+	background: -webkit-linear-gradient(left, #9a79e7 0%, #79ace7 100%);
+	background: linear-gradient(to right, #9a79e7 0%, #79ace7 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9a79e7', endColorstr='#79ace7', GradientType=1);
 }
 
 .feature-page .hero-text h6:before,
@@ -1707,7 +1707,8 @@ i.user-comments.cmnts-color-two {
 
 
 .get-start.header-area {
-	background-image: url(./assets/img/Character.png);
+	background-image: url(./assets/img/character.png);
+	height: 843px;
 }
 
 
@@ -2285,8 +2286,8 @@ li .bookCover img {
 
 .detail-bookContent {
 	width: 100%;
-    padding: 20px 10px;
-    border: 1px solid #ddd;
+	padding: 20px 10px;
+	border: 1px solid #ddd;
 	margin-bottom: 100px;
 	font-size: 14px;
 }
@@ -2302,31 +2303,31 @@ li .bookCover img {
 
 .detail-book dl {
 	margin-bottom: 0px;
-    display: block;
-    float: none;
-    clear: both;
-    padding: 0 0px 0px 10px;
-    border-top: 1px solid #eee;
+	display: block;
+	float: none;
+	clear: both;
+	padding: 0 0px 0px 10px;
+	border-top: 1px solid #eee;
 }
 
 .detail-book dt {
 	color: #000;
-    margin-right: 10px;
-    float: left;
-    font-weight: normal;
-    line-height: 20px;
-    margin-right: 20px;
-    width: 150px;
-    padding: 7px 0 7px 12px;
-    position: relative;
+	margin-right: 10px;
+	float: left;
+	font-weight: normal;
+	line-height: 20px;
+	margin-right: 20px;
+	width: 150px;
+	padding: 7px 0 7px 12px;
+	position: relative;
 }
 
 .detail-book dd.book-list-data {
 	font-weight: 600;
-    margin-right: 20px;
-    line-height: 20px;
-    margin-left: 170px;
-    padding: 7px 0 7px 0;
+	margin-right: 20px;
+	line-height: 20px;
+	margin-left: 170px;
+	padding: 7px 0 7px 0;
 }
 
 .bookStatusBtn {
@@ -2336,13 +2337,13 @@ li .bookCover img {
 
 .rentarBtn {
 	width: 100px;
-    height: 35px;
-    padding: 0 5px;
-    border: 0px;
+	height: 35px;
+	padding: 0 5px;
+	border: 0px;
 	margin: 5px 5px 0 0;
-    background: #3384cd;
-    outline: none;
-    color: #fff;
+	background: #3384cd;
+	outline: none;
+	color: #fff;
 }
 
 /* 대출/반납 버튼 */
@@ -2535,77 +2536,34 @@ div a img {
 	text-align: center;
 }
 
-.introduceHelp h3 {
-	/* font-weight: bold; */
-	margin-bottom: 50px;
-}
-
 .introduceHelp img {
 	width: 800px;
 }
 
-
-/*  */
-/* 로그인 페이지 테스트 중 */
-/*  */
-
-.test-login.header-area {
-	background-image: url(./assets/img/Character.png);
-	/* height: auto; */
-}
-
-.test-login {
-	position: relative;
-	z-index: 2;
-}
-
-/* 배경에 약간 검은 막 생기는거 이거 때문임 */
-/* .test-login:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 90px;
-	background: #29376e;
-	content: "";
-	z-index: -1;
-} */
-
-.test-login .hero-text h6 {
-	padding-left: 0;
-}
-
-.test-login .hero-text h6:before {
-	background: transparent;
-	text-transform: uppercase;
-}
-
-.test-login .hero-text h1 {
-	margin-bottom: 0;
-}
-
-.test-login .owl-nav div {
-	position: absolute;
-	left: -90px;
-	top: 50%;
-	color: #8c84d8;
-	text-transform: uppercase;
-	font-size: 12px;
-	font-weight: 700;
-	transition: 0.3s
-}
-
-.test-login .owl-nav div:hover {
-	color: #fff;
-}
-
-.test-login .owl-nav div.owl-next {
-	left: auto;
-	right: -90px;
-}
-
-.test-login .owl-nav div i.fa {
-	position: relative;
-	top: 0;
-	margin: 0 14px;
-}
+ul.tabs{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+  }
+  ul.tabs li{
+	background: none;
+	color: #222;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+  }
+  
+  ul.tabs li.current{
+	background: #ededed;
+	color: #222;
+  }
+  
+  .tab-content{
+	display: none;  
+	padding: 15px 0;
+	border-top:3px solid #eee;
+  }
+  
+  .tab-content.current{
+	display: inherit;
+  }

@@ -5,8 +5,7 @@ https://bootstrapthemes.co/item/misocial-multi-page-html-5-template/
 
 
 # 🥕구현예정
-- 홈화면 ui
-
+- 개발자 이름?
 
 # ✔구현완료
 - 로그인/로그아웃(🥕🥕🥕)
@@ -20,3 +19,4 @@ https://bootstrapthemes.co/item/misocial-multi-page-html-5-template/
 - 도서 찜/찜 해제
 - 도서 찜 목록
 - 이용안내
+- 홈화면 ui

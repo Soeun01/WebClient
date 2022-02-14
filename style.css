@@ -958,12 +958,12 @@ a.scroll-down:hover {
 	height: 100%;
 	content: "";
 	z-index: -1;
-	opacity: 0.3;
-	background: #79ace7;
-	background: -moz-linear-gradient(left, #9a79e7 0%, #79ace7 100%);
-	background: -webkit-linear-gradient(left, #9a79e7 0%, #79ace7 100%);
-	background: linear-gradient(to right, #9a79e7 0%, #79ace7 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9a79e7', endColorstr='#79ace7', GradientType=1);
+	opacity: 0.2;
+	background: #ac9a83;
+	background: -moz-linear-gradient(left, #c0bda0 0%, #ac9a83 100%);
+	background: -webkit-linear-gradient(left, #c0bda0 0%, #ac9a83 100%);
+	background: linear-gradient(to right, #c0bda0 0%, #ac9a83 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c0bda0', endColorstr='#ac9a83', GradientType=1);
 }
 
 .feature-page .hero-text h6:before,
